@@ -1,17 +1,17 @@
-package gvs.tree.model;
+package gvs.model.tree;
 
+import gvs.styles.GVSStyle;
 import gvs.tree.GVSBinaryTreeNode;
-import gvs.typ.node.GVSNodeTyp;
 
 public class TestBinaryNode implements GVSBinaryTreeNode {
   String label;
-  GVSNodeTyp type;
+  GVSStyle style;
   GVSBinaryTreeNode leftChild;
-  GVSBinaryTreeNode rigthChild;
+  GVSBinaryTreeNode rightChild;
 
-  public TestBinaryNode(String label, GVSNodeTyp type) {
+  public TestBinaryNode(String label, GVSStyle style) {
     this.label = label;
-    this.type = type;
+    this.style = style;
   }
 
   @Override
@@ -20,8 +20,8 @@ public class TestBinaryNode implements GVSBinaryTreeNode {
   }
 
   @Override
-  public GVSNodeTyp getNodeTyp() {
-    return type;
+  public GVSStyle getStyle() {
+    return style;
   }
 
   @Override
@@ -30,12 +30,12 @@ public class TestBinaryNode implements GVSBinaryTreeNode {
   }
 
   @Override
-  public GVSBinaryTreeNode getGVSRigthChild() {
-    return rigthChild;
+  public GVSBinaryTreeNode getGVSRightChild() {
+    return rightChild;
   }
 
   public void setRightChild(GVSBinaryTreeNode child) {
-    this.rigthChild = child;
+    this.rightChild = child;
   }
 
   public void setLeftChild(GVSBinaryTreeNode child) {
@@ -71,6 +71,5 @@ public class TestBinaryNode implements GVSBinaryTreeNode {
   public String toString() {
     return label;
   }
-  
   
 }

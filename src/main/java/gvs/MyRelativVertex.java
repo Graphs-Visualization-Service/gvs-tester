@@ -1,7 +1,7 @@
 package gvs;
 
 import gvs.graph.GVSRelativeVertex;
-import gvs.typ.vertex.GVSVertexTyp;
+import gvs.styles.GVSStyle;
 
 /*
  * Created on 25.11.2005
@@ -10,43 +10,38 @@ import gvs.typ.vertex.GVSVertexTyp;
  * Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
  */
 
-public class MyRelativVertex implements GVSRelativeVertex{
+public class MyRelativVertex implements GVSRelativeVertex {
 
-	private double xPos;
-	private double yPos;
-	private String label;
-	private GVSVertexTyp typ;
-	
-	public MyRelativVertex(String pLabel, GVSVertexTyp pTyp, double pXpos,double pYpos){
-		this.label =pLabel;
-		this.typ =pTyp;
-		this.xPos=pXpos;
-		this.yPos=pYpos	;
-	}
-	
-	public double getX() {
-		// TODO Auto-generated method stub
-		return xPos;
-	}
+  private double xPos;
+  private double yPos;
+  private String label;
+  private GVSStyle style;
 
-	public double getY() {
-		// TODO Auto-generated method stub
-		return yPos;
-	}
+  public MyRelativVertex(String pLabel, GVSStyle style, double pXpos,
+      double pYpos) {
+    this.label = pLabel;
+    this.style = style;
+    this.xPos = pXpos;
+    this.yPos = pYpos;
+  }
 
-	public String getGVSVertexLabel() {
-		// TODO Auto-generated method stub
-		return label;
-	}
+  public double getX() {
+    return xPos;
+  }
 
-	public GVSVertexTyp getGVSVertexTyp() {
-		// TODO Auto-generated method stub
-		return typ;
-	}
+  public double getY() {
+    return yPos;
+  }
 
-	public void setTyp(GVSVertexTyp typ) {
-		this.typ = typ;
-	}
-	
-	
+  public String getGVSVertexLabel() {
+    return label;
+  }
+
+  public GVSStyle getStyle() {
+    return style;
+  }
+
+  public void setStyle(GVSStyle style) {
+    this.style = style;
+  }
 }

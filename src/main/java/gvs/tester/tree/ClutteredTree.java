@@ -1,10 +1,10 @@
-package gvs.trees;
+package gvs.tester.tree;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import gvs.model.tree.TestBinaryNode;
 import gvs.tree.GVSTreeWithCollection;
-import gvs.tree.model.TestBinaryNode;
 
 public class ClutteredTree {
   static Map<String, TestBinaryNode> nodes = new HashMap<>();

@@ -4,39 +4,35 @@ import java.util.Vector;
 
 import gvs.graph.GVSDefaultVertex;
 import gvs.graph.GVSGraph;
-import gvs.typ.GVSDefaultTyp.LineColor;
-import gvs.typ.GVSDefaultTyp.LineStyle;
-import gvs.typ.GVSDefaultTyp.LineThickness;
-import gvs.typ.edge.GVSEdgeTyp;
-import gvs.typ.graph.GVSGraphTyp;
-import gvs.typ.graph.GVSGraphTyp.Background;
-import gvs.typ.vertex.GVSEllipseVertexTyp;
-import gvs.typ.vertex.GVSEllipseVertexTyp.FillColor;
+import gvs.styles.GVSColor;
+import gvs.styles.GVSLineStyle;
+import gvs.styles.GVSLineThickness;
+import gvs.styles.GVSStyle;
 
 public class TestRealtivGraph {
 
-  GVSEdgeTyp unexploredEdge;
-  GVSEdgeTyp discoveredEdge;
+  GVSStyle unexploredEdge;
+  GVSStyle discoveredEdge;
 
-  GVSEllipseVertexTyp unexploredVertex;
-  GVSEllipseVertexTyp visitedVertex;
+  GVSStyle unexploredVertex;
+  GVSStyle visitedVertex;
   GVSGraph g;
-  Vector<MyDirectedEdge> edges = new Vector<MyDirectedEdge>();
-  Vector<MyDefaultVertex> nodes = new Vector<MyDefaultVertex>();
+  Vector<MyDirectedEdge> edges = new Vector<>();
+  Vector<MyDefaultVertex> nodes = new Vector<>();
 
   public TestRealtivGraph() {
 
-    unexploredEdge = new GVSEdgeTyp(LineColor.black, LineStyle.dotted,
-        LineThickness.standard);
+    unexploredEdge = new GVSStyle(GVSColor.BLACK, GVSLineStyle.DOTTED,
+        GVSLineThickness.STANDARD, null, null);
 
-    discoveredEdge = new GVSEdgeTyp(LineColor.red, LineStyle.dotted,
-        LineThickness.bold);
+    discoveredEdge = new GVSStyle(GVSColor.RED, GVSLineStyle.DOTTED,
+        GVSLineThickness.BOLD, null, null);
 
-    unexploredVertex = new GVSEllipseVertexTyp(LineColor.red,
-        LineStyle.standard, LineThickness.bold, FillColor.standard);
+    unexploredVertex = new GVSStyle(GVSColor.RED, GVSLineStyle.THROUGH,
+        GVSLineThickness.BOLD, GVSColor.STANDARD, null);
 
-    visitedVertex = new GVSEllipseVertexTyp(LineColor.red, LineStyle.dashed,
-        LineThickness.standard, FillColor.blue);
+    visitedVertex = new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED,
+        GVSLineThickness.STANDARD, GVSColor.BLUE, null);
 
   }
 
@@ -74,8 +70,7 @@ public class TestRealtivGraph {
     MyUndirectedEdge ue8 = new MyUndirectedEdge("", unexploredEdge,
         new GVSDefaultVertex[] { rv3, rv8 });
 
-    g = new GVSGraph("Map", new GVSGraphTyp(Background.standard));
-    g.setMaxLabelLength(3);
+    g = new GVSGraph("Map");
 
     g.add(rv1);
     g.add(rv2);

@@ -7,29 +7,25 @@ package gvs;
  */
 
 import gvs.graph.GVSGraph;
-import gvs.typ.GVSDefaultTyp.LineColor;
-import gvs.typ.GVSDefaultTyp.LineStyle;
-import gvs.typ.GVSDefaultTyp.LineThickness;
-import gvs.typ.edge.GVSEdgeTyp;
-import gvs.typ.graph.GVSGraphTyp;
-import gvs.typ.graph.GVSGraphTyp.Background;
-import gvs.typ.vertex.GVSIconVertexTyp;
-import gvs.typ.vertex.GVSIconVertexTyp.Icon;
+import gvs.styles.GVSColor;
+import gvs.styles.GVSIcon;
+import gvs.styles.GVSLineStyle;
+import gvs.styles.GVSLineThickness;
+import gvs.styles.GVSStyle;
 
 public class TestIconDefault {
 
-  GVSEdgeTyp edgetyp;
-
-  GVSIconVertexTyp iconvertex;
+  GVSStyle edgetyp;
+  GVSStyle iconvertex;
   GVSGraph g;
 
   public TestIconDefault() {
 
-    edgetyp = new GVSEdgeTyp(LineColor.black, LineStyle.dotted,
-        LineThickness.slight);
+    edgetyp = new GVSStyle(GVSColor.BLACK, GVSLineStyle.DOTTED,
+        GVSLineThickness.SLIGHT, null, null);
 
-    iconvertex = new GVSIconVertexTyp(LineColor.red, LineStyle.dashed,
-        LineThickness.fat, Icon.COG);
+    iconvertex = new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED,
+        GVSLineThickness.FAT, null, GVSIcon.COG);
   }
 
   /**
@@ -53,8 +49,7 @@ public class TestIconDefault {
     MyDirectedEdge e3 = new MyDirectedEdge("e3", edgetyp, v2, v4);
     MyDirectedEdge e4 = new MyDirectedEdge("e4", edgetyp, v3, v5);
 
-    g = new GVSGraph("Icons", new GVSGraphTyp(Background.standard));
-    g.setMaxLabelLength(8);
+    g = new GVSGraph("Icons");
     g.add(v1);
     g.add(v2);
     g.add(e1);

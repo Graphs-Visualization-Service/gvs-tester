@@ -1,7 +1,7 @@
 package gvs;
 
+import gvs.styles.GVSStyle;
 import gvs.tree.GVSDefaultTreeNode;
-import gvs.typ.node.GVSNodeTyp;
 
 /*
  * Created on 25.11.2005
@@ -10,47 +10,45 @@ import gvs.typ.node.GVSNodeTyp;
  * Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
  */
 
-public class MyDefaultNode implements GVSDefaultTreeNode{
-	private String label; 
-	private GVSNodeTyp typ; 
-	private GVSDefaultTreeNode childs[];
-	
-	public MyDefaultNode(String pLabel, GVSNodeTyp pTyp, GVSDefaultTreeNode pChilds[]){
-		this.label=pLabel;
-		this.typ=pTyp;
-		this.childs=pChilds;
-	}
-	
-	public MyDefaultNode(String pLabel, GVSNodeTyp pTyp){
-		this(pLabel,pTyp,null);
-	}
-	public GVSDefaultTreeNode[] getGVSChildNodes() {
-		
-		return childs;
-	}
+public class MyDefaultNode implements GVSDefaultTreeNode {
+  private String label;
+  private GVSStyle style;
+  private GVSDefaultTreeNode childs[];
 
-	public String getNodeLabel() {
-		// TODO Auto-generated method stub
-		return label;
-	}
+  public MyDefaultNode(String pLabel, GVSStyle style,
+      GVSDefaultTreeNode pChilds[]) {
+    this.label = pLabel;
+    this.style = style;
+    this.childs = pChilds;
+  }
 
-	public GVSNodeTyp getNodeTyp() {
-		// TODO Auto-generated method stub
-		return typ;
-	}
+  public MyDefaultNode(String pLabel, GVSStyle style) {
+    this(pLabel, style, null);
+  }
 
+  public GVSDefaultTreeNode[] getGVSChildNodes() {
 
-	public void setChilds(GVSDefaultTreeNode[] childs) {
-		this.childs = childs;
-	}
+    return childs;
+  }
 
-	public void setLabel(String label) {
-		this.label = label;
-	}
+  public String getNodeLabel() {
+    return label;
+  }
 
+  public GVSStyle getStyle() {
+    return style;
+  }
+  
+  public void setStyle(GVSStyle style) {
+    this.style = style;
+  }
 
-	public void setTyp(GVSNodeTyp typ) {
-		this.typ = typ;
-	}
-	
+  public void setChilds(GVSDefaultTreeNode[] childs) {
+    this.childs = childs;
+  }
+
+  public void setLabel(String label) {
+    this.label = label;
+  }
+
 }

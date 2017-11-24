@@ -2,21 +2,20 @@ package gvs;
 
 import java.util.ArrayList;
 
+import gvs.styles.GVSColor;
+import gvs.styles.GVSLineStyle;
+import gvs.styles.GVSLineThickness;
+import gvs.styles.GVSStyle;
 import gvs.tree.GVSBinaryTreeNode;
 import gvs.tree.GVSTreeWithCollection;
-import gvs.typ.GVSDefaultTyp.LineColor;
-import gvs.typ.GVSDefaultTyp.LineStyle;
-import gvs.typ.GVSDefaultTyp.LineThickness;
-import gvs.typ.node.GVSNodeTyp;
-import gvs.typ.vertex.GVSEllipseVertexTyp.FillColor;
 
 public class TestBinaryTreeCollection {
 
-  GVSNodeTyp startTyp = new GVSNodeTyp(LineColor.blue, LineStyle.through,
-      LineThickness.standard, FillColor.red);
+  GVSStyle startTyp = new GVSStyle(GVSColor.BLUE, GVSLineStyle.THROUGH,
+      GVSLineThickness.STANDARD, GVSColor.RED, null);
 
-  GVSNodeTyp middleTyp = new GVSNodeTyp(LineColor.red, LineStyle.dashed,
-      LineThickness.standard, FillColor.blue);
+  GVSStyle middleTyp = new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED,
+      GVSLineThickness.STANDARD, GVSColor.BLUE, null);
 
   public static void main(String[] args) {
     TestBinaryTreeCollection test = new TestBinaryTreeCollection();
@@ -86,21 +85,21 @@ public class TestBinaryTreeCollection {
     rigthTree.display();
     rigthTree.setMaxLabelLength(60);
     rigthTree.display();
-    r1.setTyp(middleTyp);
+    r1.setStyle(middleTyp);
     rigthTree.display();
-    r2.setTyp(middleTyp);
+    r2.setStyle(middleTyp);
     rigthTree.display();
-    r3.setTyp(middleTyp);
+    r3.setStyle(middleTyp);
     rigthTree.display();
-    r4.setTyp(middleTyp);
+    r4.setStyle(middleTyp);
     rigthTree.display();
-    r5.setTyp(middleTyp);
+    r5.setStyle(middleTyp);
     rigthTree.display();
-    r6.setTyp(middleTyp);
+    r6.setStyle(middleTyp);
     rigthTree.display();
-    r7.setTyp(middleTyp);
+    r7.setStyle(middleTyp);
     rigthTree.display();
-    r8.setTyp(middleTyp);
+    r8.setStyle(middleTyp);
     rigthTree.display();
     rigthTree.disconnect();
   }
@@ -126,6 +125,7 @@ public class TestBinaryTreeCollection {
     ArrayList<GVSBinaryTreeNode> l = new ArrayList<>();
     l.add(nr1);
 
+    normal.add(l);
     normal.add(l);
     normal.display();
 

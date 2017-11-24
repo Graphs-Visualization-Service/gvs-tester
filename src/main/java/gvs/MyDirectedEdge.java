@@ -2,7 +2,7 @@ package gvs;
 
 import gvs.graph.GVSDefaultVertex;
 import gvs.graph.GVSDirectedEdge;
-import gvs.typ.edge.GVSEdgeTyp;
+import gvs.styles.GVSStyle;
 
 /*
  * Created on 17.11.2005
@@ -11,53 +11,50 @@ import gvs.typ.edge.GVSEdgeTyp;
  * Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
  */
 
-public class MyDirectedEdge implements GVSDirectedEdge{
-	private String label;
-	GVSEdgeTyp typ;
-	GVSDefaultVertex start;
-	GVSDefaultVertex end;
-		
-	boolean isExplored;
-	
-	public MyDirectedEdge(String pLabel, GVSEdgeTyp pTyp, GVSDefaultVertex pStart, GVSDefaultVertex pEnd){
-		label=pLabel;
-		typ=pTyp;
-		start=pStart;
-		end=pEnd;
-		isExplored=false;
-		
-	}
-	
-	public GVSDefaultVertex getGVSStartVertex() {
-		// TODO Auto-generated method stub
-		return start;
-	}
+public class MyDirectedEdge implements GVSDirectedEdge {
 
-	public GVSDefaultVertex getGVSEndVertex() {
-		// TODO Auto-generated method stub
-		return end;
-	}
+  private String label;
+  GVSStyle style;
+  GVSDefaultVertex start;
+  GVSDefaultVertex end;
 
-	public String getGVSEdgeLabel() {
-		// TODO Auto-generated method stub
-		return label;
-	}
+  boolean isExplored;
 
-	public GVSEdgeTyp getGVSEdgeTyp() {
-		// TODO Auto-generated method stub
-		return typ;
-	}
-	public boolean isExplored() {
-		return isExplored;
-	}
+  public MyDirectedEdge(String pLabel, GVSStyle style, GVSDefaultVertex pStart,
+      GVSDefaultVertex pEnd) {
 
-	public void setExplored(boolean isExplored) {
-		this.isExplored = isExplored;
-	}
+    this.label = pLabel;
+    this.style = style;
+    this.start = pStart;
+    this.end = pEnd;
+    this.isExplored = false;
+  }
 
-	public void setTyp(GVSEdgeTyp typ) {
-		this.typ = typ;
-	}
+  public GVSDefaultVertex getGVSStartVertex() {
+    return start;
+  }
 
-	
+  public GVSDefaultVertex getGVSEndVertex() {
+    return end;
+  }
+
+  public String getGVSEdgeLabel() {
+    return label;
+  }
+
+  public GVSStyle getStyle() {
+    return style;
+  }
+  
+  public void setStyle(GVSStyle style) {
+    this.style = style;
+  }
+
+  public boolean isExplored() {
+    return isExplored;
+  }
+
+  public void setExplored(boolean isExplored) {
+    this.isExplored = isExplored;
+  }
 }

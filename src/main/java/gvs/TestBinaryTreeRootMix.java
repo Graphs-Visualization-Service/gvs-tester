@@ -1,18 +1,18 @@
 package gvs;
 
+import gvs.styles.GVSColor;
+import gvs.styles.GVSLineStyle;
+import gvs.styles.GVSLineThickness;
+import gvs.styles.GVSStyle;
 import gvs.tree.GVSTreeWithRoot;
-import gvs.typ.GVSDefaultTyp.LineColor;
-import gvs.typ.GVSDefaultTyp.LineStyle;
-import gvs.typ.GVSDefaultTyp.LineThickness;
-import gvs.typ.node.GVSNodeTyp;
-import gvs.typ.vertex.GVSEllipseVertexTyp.FillColor;
 
 public class TestBinaryTreeRootMix {
-  GVSNodeTyp startTyp = new GVSNodeTyp(LineColor.blue, LineStyle.through,
-      LineThickness.standard, FillColor.red);
 
-  GVSNodeTyp middleTyp = new GVSNodeTyp(LineColor.red, LineStyle.dashed,
-      LineThickness.standard, FillColor.blue);
+  GVSStyle startTyp = new GVSStyle(GVSColor.BLUE, GVSLineStyle.THROUGH,
+      GVSLineThickness.STANDARD, GVSColor.RED, null);
+
+  GVSStyle middleTyp = new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED,
+      GVSLineThickness.STANDARD, GVSColor.BLUE, null);
 
   public static void main(String[] args) {
     TestBinaryTreeRootMix test = new TestBinaryTreeRootMix();
@@ -76,21 +76,21 @@ public class TestBinaryTreeRootMix {
     // rigthTree.setMaxLabelLength(60);
     // rigthTree.display();
 
-    r8.setTyp(middleTyp);
+    r8.setStyle(middleTyp);
     rigthTree.display();
-    r7.setTyp(middleTyp);
+    r7.setStyle(middleTyp);
     rigthTree.display();
-    r6.setTyp(middleTyp);
+    r6.setStyle(middleTyp);
     rigthTree.display();
-    r5.setTyp(middleTyp);
+    r5.setStyle(middleTyp);
     rigthTree.display();
-    r4.setTyp(middleTyp);
+    r4.setStyle(middleTyp);
     rigthTree.display();
-    r3.setTyp(middleTyp);
+    r3.setStyle(middleTyp);
     rigthTree.display();
-    r2.setTyp(middleTyp);
+    r2.setStyle(middleTyp);
     rigthTree.display();
-    r1.setTyp(middleTyp);
+    r1.setStyle(middleTyp);
     rigthTree.display();
     rigthTree.disconnect();
   }

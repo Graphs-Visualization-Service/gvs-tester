@@ -3,8 +3,7 @@ package gvs;
 import gvs.graph.GVSDefaultVertex;
 import gvs.graph.GVSRelativeVertex;
 import gvs.graph.GVSUndirectedEdge;
-import gvs.typ.edge.GVSEdgeTyp;
-import gvs.typ.vertex.GVSVertexTyp;
+import gvs.styles.GVSStyle;
 
 public class VertexEge {
 
@@ -14,6 +13,7 @@ public class VertexEge {
 }
 
 class Vertex implements GVSDefaultVertex {
+
   Object mObj;
 
   Vertex(Object pObj) {
@@ -28,8 +28,8 @@ class Vertex implements GVSDefaultVertex {
     return mObj.toString();
   }
 
-  public GVSVertexTyp getGVSVertexTyp() {
-    // TODO Auto-generated method stub
+  @Override
+  public GVSStyle getStyle() {
     return null;
   }
 }
@@ -123,8 +123,7 @@ class Edge implements GVSUndirectedEdge {
     return mObj.toString();
   }
 
-  public GVSEdgeTyp getGVSEdgeTyp() {
-    // TODO Auto-generated method stub
+  public GVSStyle getStyle() {
     return null;
   }
 }

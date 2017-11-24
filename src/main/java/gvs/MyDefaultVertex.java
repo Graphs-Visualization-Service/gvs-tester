@@ -1,48 +1,42 @@
 package gvs;
 
 import gvs.graph.GVSDefaultVertex;
-import gvs.typ.vertex.GVSVertexTyp;
+import gvs.styles.GVSStyle;
 
+public class MyDefaultVertex implements GVSDefaultVertex {
 
+  String label;
+  GVSStyle style;
+  boolean isExplored;
 
-public class MyDefaultVertex implements GVSDefaultVertex{
-	String label; 
-	GVSVertexTyp typ;
-	boolean isExplored;
-	
-	
-	public MyDefaultVertex(String pLabel, GVSVertexTyp pTyp){
-		label=pLabel;
-		typ=pTyp;
-		isExplored=false;
-	}
-	
-	public String getGVSVertexLabel() {
-		// TODO Auto-generated method stub
-		return label;
-	}
+  public MyDefaultVertex(String pLabel, GVSStyle style) {
+    this.label = pLabel;
+    this.style = style;
+    this.isExplored = false;
+  }
 
-	public GVSVertexTyp getGVSVertexTyp() {
-		// TODO Auto-generated method stub
-		return typ;
-	}
+  public String getGVSVertexLabel() {
+    return label;
+  }
 
-	public void setLabel(String pLabel){
-		this.label=pLabel;
-	}
+  public void setLabel(String pLabel) {
+    this.label = pLabel;
+  }
 
-	
-	public void setTyp(GVSVertexTyp typ) {
-		this.typ = typ;
-	}
+  public boolean isExplored() {
+    return isExplored;
+  }
 
-	public boolean isExplored() {
-		return isExplored;
-	}
+  public void setExplored(boolean isExplored) {
+    this.isExplored = isExplored;
+  }
 
-	public void setExplored(boolean isExplored) {
-		this.isExplored = isExplored;
-	}
-
-	
+  @Override
+  public GVSStyle getStyle() {
+    return style;
+  }
+  
+  public void setStyle(GVSStyle style) {
+    this.style = style;
+  }
 }

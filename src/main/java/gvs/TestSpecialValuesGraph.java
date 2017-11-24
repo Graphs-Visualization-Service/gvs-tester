@@ -6,7 +6,7 @@ import gvs.graph.GVSGraph;
 public class TestSpecialValuesGraph {
 
   public void empty() {
-    GVSGraph gempty = new GVSGraph("Empty", null);
+    GVSGraph gempty = new GVSGraph("Empty");
     gempty.display();
     gempty.display();
     MyDefaultVertex v1 = new MyDefaultVertex("v1", null);
@@ -18,7 +18,7 @@ public class TestSpecialValuesGraph {
   }
 
   public void mixedVertex() {
-    GVSGraph gMixedVertex = new GVSGraph("Mixed Reltiv and Default", null);
+    GVSGraph gMixedVertex = new GVSGraph("Mixed Reltiv and Default");
     gMixedVertex.add(new MyRelativVertex("", null, 50, 50));
     gMixedVertex.add(new MyDefaultVertex("", null));
     gMixedVertex.display();
@@ -26,7 +26,7 @@ public class TestSpecialValuesGraph {
   }
 
   public void smallWithArrow() {
-    GVSGraph smallWithArrow = new GVSGraph("smallWithArrow", null);
+    GVSGraph smallWithArrow = new GVSGraph("smallWithArrow");
     MyRelativVertex rv1 = new MyRelativVertex("rv1", null, 30, 20);
     MyRelativVertex rv2 = new MyRelativVertex("rv2", null, 60, 67);
     MyUndirectedEdge ue1 = new MyUndirectedEdge("ue1", null,

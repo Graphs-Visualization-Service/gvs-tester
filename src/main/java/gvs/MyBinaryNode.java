@@ -1,7 +1,7 @@
 package gvs;
 
+import gvs.styles.GVSStyle;
 import gvs.tree.GVSBinaryTreeNode;
-import gvs.typ.node.GVSNodeTyp;
 
 /*
  * Created on 17.11.2005
@@ -12,42 +12,44 @@ import gvs.typ.node.GVSNodeTyp;
 
 public class MyBinaryNode implements GVSBinaryTreeNode {
 
-  String label;
-  GVSNodeTyp typ;
-  GVSBinaryTreeNode left;
-  GVSBinaryTreeNode rigth;
+  private String label;
+  private GVSStyle style;
+  private GVSBinaryTreeNode left;
+  private GVSBinaryTreeNode right;
 
-  public MyBinaryNode(String pLabel, GVSNodeTyp pTyp) {
-    this(pLabel, pTyp, null, null);
+  public MyBinaryNode(String pLabel, GVSStyle style) {
+    this(pLabel, style, null, null);
   }
 
-  public MyBinaryNode(String pLabel, GVSNodeTyp pTyp, GVSBinaryTreeNode pLeft,
-      GVSBinaryTreeNode pRigth) {
-    label = pLabel;
-    typ = pTyp;
-    left = pLeft;
-    rigth = pRigth;
-
+  public MyBinaryNode(String pLabel, GVSStyle style, GVSBinaryTreeNode pLeft,
+      GVSBinaryTreeNode pRight) {
+    this.label = pLabel;
+    this.style = style;
+    this.left = pLeft;
+    this.right = pRight;
   }
 
+  @Override
   public GVSBinaryTreeNode getGVSLeftChild() {
     return left;
   }
 
-  public GVSBinaryTreeNode getGVSRigthChild() {
-    return rigth;
+  @Override
+  public GVSBinaryTreeNode getGVSRightChild() {
+    return right;
   }
 
+  @Override
   public String getNodeLabel() {
     return label;
   }
 
-  public GVSNodeTyp getNodeTyp() {
-    return typ;
+  @Override
+  public GVSStyle getStyle() {
+    return style;
   }
 
-  public void setTyp(GVSNodeTyp typ) {
-    this.typ = typ;
+  public void setStyle(GVSStyle style) {
+    this.style = style;
   }
-
 }

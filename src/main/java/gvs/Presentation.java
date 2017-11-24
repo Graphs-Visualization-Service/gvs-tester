@@ -7,20 +7,18 @@ package gvs;
  */
 
 import gvs.graph.GVSGraph;
-import gvs.typ.GVSDefaultTyp.LineColor;
-import gvs.typ.GVSDefaultTyp.LineStyle;
-import gvs.typ.GVSDefaultTyp.LineThickness;
-import gvs.typ.graph.GVSGraphTyp;
-import gvs.typ.graph.GVSGraphTyp.Background;
-import gvs.typ.vertex.GVSIconVertexTyp;
-import gvs.typ.vertex.GVSIconVertexTyp.Icon;
+import gvs.styles.GVSColor;
+import gvs.styles.GVSIcon;
+import gvs.styles.GVSLineStyle;
+import gvs.styles.GVSLineThickness;
+import gvs.styles.GVSStyle;
 
 public class Presentation {
 
   public static void main(String[] args) {
 
-    GVSIconVertexTyp image1 = new GVSIconVertexTyp(LineColor.standard,
-        LineStyle.standard, LineThickness.standard, Icon.BELL);
+    GVSStyle image1 = new GVSStyle(GVSColor.STANDARD, GVSLineStyle.THROUGH,
+        GVSLineThickness.STANDARD, GVSColor.STANDARD, GVSIcon.BELL);
 
     MyRelativVertex rel1 = new MyRelativVertex("1", image1, 10, 10);
     MyRelativVertex rel2 = new MyRelativVertex("", image1, 20, 20);
@@ -42,8 +40,7 @@ public class Presentation {
     MyRelativVertex rel18 = new MyRelativVertex("18", null, 5, 90);
 
     // MyUndirectedEdge e1 = new MyUndirectedEdge();
-    GVSGraph mygraph = new GVSGraph("Map",
-        new GVSGraphTyp(Background.background2));
+    GVSGraph mygraph = new GVSGraph("Map");
     mygraph.add(rel1);
     mygraph.add(rel2);
     mygraph.add(rel3);

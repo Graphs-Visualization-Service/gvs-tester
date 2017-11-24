@@ -2,7 +2,7 @@ package gvs;
 
 import gvs.graph.GVSDefaultVertex;
 import gvs.graph.GVSUndirectedEdge;
-import gvs.typ.edge.GVSEdgeTyp;
+import gvs.styles.GVSStyle;
 
 /*
  * Created on 25.11.2005
@@ -11,64 +11,57 @@ import gvs.typ.edge.GVSEdgeTyp;
  * Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
  */
 
-public class MyUndirectedEdge implements GVSUndirectedEdge{
-	private String label;
-	private GVSEdgeTyp typ;
-	private GVSDefaultVertex[] vertizes;
-	private int arrowPos=0;
-	
-	public MyUndirectedEdge(String pLabel, GVSEdgeTyp pTyp, GVSDefaultVertex pVertizes[]){
-		this.label=pLabel;
-		this.typ=pTyp;
-		this.vertizes=pVertizes;
-	}
-	
-	public MyUndirectedEdge(String pLabel, GVSEdgeTyp pTyp, 
-			GVSDefaultVertex pVertizes[],int pArrowPos){
-		this.label=pLabel;
-		this.typ=pTyp;
-		this.vertizes=pVertizes;
-		this.arrowPos=pArrowPos;
-	}
-	
-	public GVSDefaultVertex[] getGVSVertizes() {
-		// TODO Auto-generated method stub
-		return vertizes;
-	}
+public class MyUndirectedEdge implements GVSUndirectedEdge {
+  private String label;
+  private GVSStyle style;
+  private GVSDefaultVertex[] vertizes;
+  private int arrowPos = 0;
 
-	public String getGVSEdgeLabel() {
-		// TODO Auto-generated method stub
-		return label;
-	}
+  public MyUndirectedEdge(String pLabel, GVSStyle style,
+      GVSDefaultVertex pVertizes[]) {
+    this.label = pLabel;
+    this.style = style;
+    this.vertizes = pVertizes;
+  }
 
-	public GVSEdgeTyp getGVSEdgeTyp() {
-		// TODO Auto-generated method stub
-		return typ;
-	}
+  public MyUndirectedEdge(String pLabel, GVSStyle style,
+      GVSDefaultVertex pVertizes[], int pArrowPos) {
+    this.label = pLabel;
+    this.style = style;
+    this.vertizes = pVertizes;
+    this.arrowPos = pArrowPos;
+  }
 
+  public GVSDefaultVertex[] getGVSVertizes() {
+    return vertizes;
+  }
 
-	public void setLabel(String label) {
-		this.label = label;
-	}
+  public String getGVSEdgeLabel() {
+    return label;
+  }
 
+  public GVSStyle getStyle() {
+    return style;
+  }
+  
+  public void setStyle(GVSStyle style) {
+    this.style = style;
+  }
 
-	public void setTyp(GVSEdgeTyp typ) {
-		this.typ = typ;
-	}
+  public void setLabel(String label) {
+    this.label = label;
+  }
 
+  public void setVertizes(GVSDefaultVertex[] vertizes) {
+    this.vertizes = vertizes;
+  }
 
-	public void setVertizes(GVSDefaultVertex[] vertizes) {
-		this.vertizes = vertizes;
-	}
+  public int hasArrow() {
+    return arrowPos;
+  }
 
-
-	public int hasArrow() {
-		
-		return arrowPos;
-	}
-	
-	public void setArrow(int pPosition){
-		this.arrowPos=pPosition;
-	}
+  public void setArrow(int pPosition) {
+    this.arrowPos = pPosition;
+  }
 
 }

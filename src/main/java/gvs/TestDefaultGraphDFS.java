@@ -1,43 +1,40 @@
 package gvs;
 
+import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Vector;
+import java.util.List;
 
 import gvs.graph.GVSGraph;
-import gvs.typ.GVSDefaultTyp.LineColor;
-import gvs.typ.GVSDefaultTyp.LineStyle;
-import gvs.typ.GVSDefaultTyp.LineThickness;
-import gvs.typ.edge.GVSEdgeTyp;
-import gvs.typ.graph.GVSGraphTyp;
-import gvs.typ.graph.GVSGraphTyp.Background;
-import gvs.typ.vertex.GVSEllipseVertexTyp;
-import gvs.typ.vertex.GVSEllipseVertexTyp.FillColor;
+import gvs.styles.GVSColor;
+import gvs.styles.GVSLineStyle;
+import gvs.styles.GVSLineThickness;
+import gvs.styles.GVSStyle;
 
 public class TestDefaultGraphDFS {
-  GVSEdgeTyp unexploredEdge;
-  GVSEdgeTyp discoveredEdge;
-  GVSEdgeTyp backEdge;
-  GVSEllipseVertexTyp unexploredVertex;
-  GVSEllipseVertexTyp visitedVertex;
-  GVSGraph dfsGraph;
-  Vector<MyDirectedEdge> edges = new Vector<MyDirectedEdge>();
-  Vector<MyDefaultVertex> nodes = new Vector<MyDefaultVertex>();
+  private GVSStyle unexploredEdge;
+  private GVSStyle discoveredEdge;
+  private GVSStyle backEdge;
+  private GVSStyle unexploredVertex;
+  private GVSStyle visitedVertex;
+  private GVSGraph dfsGraph;
+  private List<MyDirectedEdge> edges = new ArrayList<>();
+  private List<MyDefaultVertex> nodes = new ArrayList<>();
 
   public TestDefaultGraphDFS() {
-    unexploredEdge = new GVSEdgeTyp(LineColor.black, LineStyle.dotted,
-        LineThickness.slight);
+    unexploredEdge = new GVSStyle(GVSColor.BLACK, GVSLineStyle.DOTTED,
+        GVSLineThickness.SLIGHT, null, null);
 
-    discoveredEdge = new GVSEdgeTyp(LineColor.red, LineStyle.dotted,
-        LineThickness.standard);
+    discoveredEdge = new GVSStyle(GVSColor.RED, GVSLineStyle.DOTTED,
+        GVSLineThickness.STANDARD, null, null);
 
-    backEdge = new GVSEdgeTyp(LineColor.green, LineStyle.dotted,
-        LineThickness.standard);
+    backEdge = new GVSStyle(GVSColor.GREEN, GVSLineStyle.DOTTED,
+        GVSLineThickness.STANDARD, null, null);
 
-    unexploredVertex = new GVSEllipseVertexTyp(LineColor.black,
-        LineStyle.standard, LineThickness.standard, FillColor.blue);
+    unexploredVertex = new GVSStyle(GVSColor.BLACK, GVSLineStyle.THROUGH,
+        GVSLineThickness.STANDARD, GVSColor.BLUE, null);
 
-    visitedVertex = new GVSEllipseVertexTyp(LineColor.red, LineStyle.dashed,
-        LineThickness.fat, FillColor.red);
+    visitedVertex = new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED,
+        GVSLineThickness.FAT, GVSColor.RED, null);
 
     // DFS oder so
     MyDefaultVertex v1 = new MyDefaultVertex("Vertex1", unexploredVertex);
@@ -77,8 +74,7 @@ public class TestDefaultGraphDFS {
     MyDirectedEdge e8 = new MyDirectedEdge("Edge8", unexploredEdge, v6, v7);
 
     // MyDirectedEdge e9 = new MyDirectedEdge("Edge8",unexploredEdge,v10,v10);
-    dfsGraph = new GVSGraph("DFS Mein erster Versuch",
-        new GVSGraphTyp(Background.standard));
+    dfsGraph = new GVSGraph("DFS Mein erster Versuch");
     // dfsGraph.setMaxLabelLength(40);
 
     /*
@@ -168,7 +164,7 @@ public class TestDefaultGraphDFS {
   }
 
   public void dfs(GVSGraph pGraph, MyDefaultVertex pVertex) {
-    pVertex.setTyp(visitedVertex);
+    pVertex.setStyle(visitedVertex);
     pVertex.setExplored(true);
     pGraph.display();
 
@@ -180,15 +176,14 @@ public class TestDefaultGraphDFS {
         if (de.isExplored() == false) {
           MyDefaultVertex newStart = (MyDefaultVertex) de.getGVSEndVertex();
           if (newStart.isExplored() == false) {
-            de.setTyp(discoveredEdge);
+            de.setStyle(discoveredEdge);
             de.setExplored(true);
             pGraph.display();
             dfs(pGraph, newStart);
           } else {
-            de.setTyp(backEdge);
+            de.setStyle(backEdge);
             pGraph.display();
             de.setExplored(true);
-
           }
         }
       }
