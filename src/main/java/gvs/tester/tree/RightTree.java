@@ -11,7 +11,7 @@ public class RightTree {
 
   public static void main(String[] args) {
     initNodes();
-    GVSTreeWithCollection gvsTree = new GVSTreeWithCollection("Cluttered Tree");
+    GVSTreeWithCollection gvsTree = new GVSTreeWithCollection("Right Tree");
     nodes.values().forEach(node -> gvsTree.add(node));
     gvsTree.display();
     gvsTree.disconnect();
