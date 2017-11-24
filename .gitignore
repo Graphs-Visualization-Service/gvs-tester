@@ -3,7 +3,6 @@ log/
 build/*
 *.gvs
 
-
 # Eclipse properties
 .classpath
 .metadata
@@ -23,11 +22,6 @@ local.properties
 
 ### Java template
 *.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
 
 # Gradle:
 .gradle
