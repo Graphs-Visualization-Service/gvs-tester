@@ -18,10 +18,13 @@ public class ClutteredTree {
   }
 
   private static void initNodes() {
-    for (int i = 0; i < 20; i++) {
+    for (int i = 1; i < 20; i++) {
       TestBinaryNode node =  createOrGetNode(i);
       TestBinaryNode leftChild = createOrGetNode(2*i);
-      TestBinaryNode rightChild = createOrGetNode(2*i+1);
+      TestBinaryNode rightChild = null;
+      if (i != 19) {
+        rightChild = createOrGetNode(2*i+1);  
+      }
       node.setLeftChild(leftChild);
       node.setRightChild(rightChild);
     }
