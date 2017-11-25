@@ -6,7 +6,7 @@ import java.util.List;
 import gvs.model.tree.TestBinaryNode;
 import gvs.tree.GVSTreeWithCollection;
 
-public class multipleRoots {
+public class MultipleRoots {
   static List<TestBinaryNode> nodes = new ArrayList<>();
 
   public static void main(String[] args) {
