@@ -37,8 +37,6 @@ public class TestBinaryTreeRootMix {
 
     GVSTreeWithRoot leftTree = new GVSTreeWithRoot("Links Baum");
     leftTree.setRoot(n8);
-    leftTree.setMaxLabelLength(2);
-    leftTree.setMaxLabelLength(60);
 
     leftTree.display();
     leftTree.disconnect();

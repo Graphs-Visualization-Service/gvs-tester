@@ -50,9 +50,6 @@ public class TestBinaryTreeCollection {
     leftTree.add(n7);
     leftTree.add(n8);
 
-    leftTree.setMaxLabelLength(2);
-    leftTree.setMaxLabelLength(60);
-
     leftTree.display();
     leftTree.disconnect();
 
@@ -80,10 +77,6 @@ public class TestBinaryTreeCollection {
     rigthTree.add(r7);
     rigthTree.add(r8);
 
-    rigthTree.display();
-    // rigthTree.setMaxLabelLength(2);
-    rigthTree.display();
-    rigthTree.setMaxLabelLength(60);
     rigthTree.display();
     r1.setStyle(middleTyp);
     rigthTree.display();
