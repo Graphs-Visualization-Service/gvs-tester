@@ -1,7 +1,6 @@
 package gvs.tester.tree;
 
-import gvs.MyBinaryNode;
-import gvs.tree.GVSTreeWithCollection;
+import gvs.model.tree.TestBinaryNode;
 import gvs.tree.GVSTreeWithRoot;
 
 public class RemoveRoot {
@@ -13,7 +12,7 @@ public class RemoveRoot {
    */
   public static void main(String[] args) {
     GVSTreeWithRoot gvsTree = new GVSTreeWithRoot("Remove Root");
-    MyBinaryNode root = new MyBinaryNode("root", null);
+    TestBinaryNode root = new TestBinaryNode("root", null);
     gvsTree.setRoot(root);
     gvsTree.display();
     gvsTree.setRoot(null);
