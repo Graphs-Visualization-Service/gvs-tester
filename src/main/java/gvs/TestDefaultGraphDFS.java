@@ -22,19 +22,19 @@ public class TestDefaultGraphDFS {
 
   public TestDefaultGraphDFS() {
     unexploredEdge = new GVSStyle(GVSColor.BLACK, GVSLineStyle.DOTTED,
-        GVSLineThickness.SLIGHT, null, null);
+        GVSLineThickness.SLIGHT);
 
     discoveredEdge = new GVSStyle(GVSColor.RED, GVSLineStyle.DOTTED,
-        GVSLineThickness.STANDARD, null, null);
+        GVSLineThickness.STANDARD);
 
     backEdge = new GVSStyle(GVSColor.GREEN, GVSLineStyle.DOTTED,
-        GVSLineThickness.STANDARD, null, null);
+        GVSLineThickness.STANDARD);
 
     unexploredVertex = new GVSStyle(GVSColor.BLACK, GVSLineStyle.THROUGH,
-        GVSLineThickness.STANDARD, GVSColor.BLUE, null);
+        GVSLineThickness.STANDARD, GVSColor.BLUE);
 
     visitedVertex = new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED,
-        GVSLineThickness.FAT, GVSColor.RED, null);
+        GVSLineThickness.FAT, GVSColor.RED);
 
     // DFS oder so
     MyDefaultVertex v1 = new MyDefaultVertex("Vertex1", unexploredVertex);

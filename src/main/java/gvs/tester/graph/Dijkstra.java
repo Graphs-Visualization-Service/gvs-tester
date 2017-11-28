@@ -5,13 +5,10 @@
 
 package gvs.tester.graph;
 
-import java.awt.font.GraphicAttribute;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import gvs.MyDefaultVertex;
-import gvs.MyDirectedEdge;
 import gvs.MyRelativVertex;
 import gvs.MyUndirectedEdge;
 import gvs.graph.GVSGraph;
@@ -19,7 +16,6 @@ import gvs.styles.GVSColor;
 import gvs.styles.GVSLineStyle;
 import gvs.styles.GVSLineThickness;
 import gvs.styles.GVSStyle;
-import gvs.tree.GVSTreeWithCollection;
 
 public class Dijkstra {
 
@@ -34,19 +30,19 @@ public class Dijkstra {
 
   public Dijkstra() {
     unexploredEdge = new GVSStyle(GVSColor.BLACK, GVSLineStyle.DOTTED,
-        GVSLineThickness.SLIGHT, null, null);
+        GVSLineThickness.SLIGHT);
 
     discoveredEdge = new GVSStyle(GVSColor.RED, GVSLineStyle.DOTTED,
-        GVSLineThickness.STANDARD, null, null);
+        GVSLineThickness.STANDARD);
 
     backEdge = new GVSStyle(GVSColor.GREEN, GVSLineStyle.DOTTED,
-        GVSLineThickness.STANDARD, null, null);
+        GVSLineThickness.STANDARD);
 
     unexploredVertex = new GVSStyle(GVSColor.BLACK, GVSLineStyle.THROUGH,
-        GVSLineThickness.STANDARD, GVSColor.BLUE, null);
+        GVSLineThickness.STANDARD, GVSColor.BLUE);
 
     visitedVertex = new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED,
-        GVSLineThickness.FAT, GVSColor.RED, null);
+        GVSLineThickness.FAT, GVSColor.RED);
 
     graph = new GVSGraph("Dijkstra");
   }

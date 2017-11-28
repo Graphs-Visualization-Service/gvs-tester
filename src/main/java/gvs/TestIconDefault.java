@@ -22,10 +22,10 @@ public class TestIconDefault {
   public TestIconDefault() {
 
     edgetyp = new GVSStyle(GVSColor.BLACK, GVSLineStyle.DOTTED,
-        GVSLineThickness.SLIGHT, null, null);
+        GVSLineThickness.SLIGHT);
 
     iconvertex = new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED,
-        GVSLineThickness.FAT, null, GVSIcon.COG);
+        GVSLineThickness.FAT, GVSColor.STANDARD, GVSIcon.COG);
   }
 
   /**

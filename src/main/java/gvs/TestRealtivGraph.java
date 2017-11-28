@@ -23,16 +23,16 @@ public class TestRealtivGraph {
   public TestRealtivGraph() {
 
     unexploredEdge = new GVSStyle(GVSColor.BLACK, GVSLineStyle.DOTTED,
-        GVSLineThickness.STANDARD, null, null);
+        GVSLineThickness.STANDARD);
 
     discoveredEdge = new GVSStyle(GVSColor.RED, GVSLineStyle.DOTTED,
-        GVSLineThickness.BOLD, null, null);
+        GVSLineThickness.BOLD);
 
     unexploredVertex = new GVSStyle(GVSColor.RED, GVSLineStyle.THROUGH,
-        GVSLineThickness.BOLD, GVSColor.STANDARD, null);
+        GVSLineThickness.BOLD, GVSColor.STANDARD);
 
     visitedVertex = new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED,
-        GVSLineThickness.STANDARD, GVSColor.BLUE, null);
+        GVSLineThickness.STANDARD, GVSColor.BLUE);
 
   }
 

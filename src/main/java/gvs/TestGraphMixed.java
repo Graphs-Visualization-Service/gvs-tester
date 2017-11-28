@@ -19,19 +19,19 @@ public class TestGraphMixed {
   public TestGraphMixed() {
 
     unexploredEdge = new GVSStyle(GVSColor.BLACK, GVSLineStyle.DOTTED,
-        GVSLineThickness.SLIGHT, null, null);
+        GVSLineThickness.SLIGHT);
 
     discoveredEdge = new GVSStyle(GVSColor.RED, GVSLineStyle.DOTTED,
-        GVSLineThickness.SLIGHT, null, null);
+        GVSLineThickness.SLIGHT);
 
     backEdge = new GVSStyle(GVSColor.GREEN, GVSLineStyle.DOTTED,
-        GVSLineThickness.SLIGHT, null, null);
+        GVSLineThickness.SLIGHT);
 
     unexploredVertex = new GVSStyle(GVSColor.BLACK, GVSLineStyle.THROUGH,
-        GVSLineThickness.STANDARD, GVSColor.BLUE, null);
+        GVSLineThickness.STANDARD, GVSColor.BLUE);
 
     visitedVertex = new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED,
-        GVSLineThickness.FAT, null, GVSIcon.BELL);
+        GVSLineThickness.FAT, GVSColor.STANDARD, GVSIcon.BELL);
   }
 
   public static void main(String[] args) {

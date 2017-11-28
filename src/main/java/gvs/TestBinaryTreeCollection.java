@@ -12,10 +12,10 @@ import gvs.tree.GVSTreeWithCollection;
 public class TestBinaryTreeCollection {
 
   GVSStyle startTyp = new GVSStyle(GVSColor.BLUE, GVSLineStyle.THROUGH,
-      GVSLineThickness.STANDARD, GVSColor.RED, null);
+      GVSLineThickness.STANDARD, GVSColor.RED);
 
   GVSStyle middleTyp = new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED,
-      GVSLineThickness.STANDARD, GVSColor.BLUE, null);
+      GVSLineThickness.STANDARD, GVSColor.BLUE);
 
   public static void main(String[] args) {
     TestBinaryTreeCollection test = new TestBinaryTreeCollection();
