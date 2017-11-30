@@ -104,6 +104,7 @@ public class Dijkstra {
       nodes.get(r.nextInt(nodeIndex)).setStyle(unexploredVertex);
       edges.get(r.nextInt(edgeIndex)).setStyle(discoveredEdge);
       edges.get(r.nextInt(edgeIndex)).setStyle(unexploredEdge);
+      edges.get(r.nextInt(edgeIndex)).setStyle(backEdge);
       edges.get(r.nextInt(edgeIndex)).setArrow(1);
       graph.display();
     }
