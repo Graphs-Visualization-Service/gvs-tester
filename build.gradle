@@ -24,6 +24,8 @@ repositories {
 
 dependencies {
     compile files('src/main/resources/libs/gvs-lib-java.jar')
+    compile files('src/main/resources/libs/net-datastructures.zip')
+    compile files('src/main/resources/libs/ch-hsr-dijkstra.zip')
 	
 	testCompile("org.junit.jupiter:junit-jupiter-api:5.0.1")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.1")	
