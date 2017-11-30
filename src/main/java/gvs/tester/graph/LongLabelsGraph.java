@@ -6,6 +6,7 @@ import java.util.Random;
 
 import gvs.graph.GVSGraph;
 import gvs.model.graph.TestDefaultVertex;
+import gvs.model.graph.TestUndirectedEdge;
 
 public class LongLabelsGraph {
   private List<TestDefaultVertex> vertices = new ArrayList<>();

@@ -1,4 +1,4 @@
-package gvs.tester.graph;
+package gvs.model.graph;
 
 import gvs.graph.GVSDefaultVertex;
 import gvs.graph.GVSUndirectedEdge;
