@@ -5,7 +5,7 @@ import java.util.Vector;
 import gvs.model.tree.TestBinaryNode;
 import gvs.tree.GVSTreeWithRoot;
 
-public class ClusterSplitterTest {
+public class ClusterSplitter {
 
   public static void main(String[] args) {
    
