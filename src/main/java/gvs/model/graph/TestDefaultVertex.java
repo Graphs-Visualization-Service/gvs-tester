@@ -25,5 +25,9 @@ public class TestDefaultVertex implements GVSDefaultVertex {
   public GVSStyle getStyle() {
     return style;
   }
+  
+  public void setStyle(GVSStyle style) {
+    this.style = style;
+  }
 
 }

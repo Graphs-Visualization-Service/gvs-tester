@@ -21,8 +21,8 @@ public class TestUndirectedEdge implements GVSUndirectedEdge {
     this(label, null); 
   }
   
-  public TestUndirectedEdge(GVSRelativeVertex from,
-      GVSRelativeVertex to, String label) {
+  public TestUndirectedEdge(GVSDefaultVertex from,
+      GVSDefaultVertex to, String label) {
     this(label);
     this.vertices = new GVSDefaultVertex[2];
     setFromVertex(from);
