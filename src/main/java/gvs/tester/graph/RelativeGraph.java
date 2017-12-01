@@ -28,7 +28,39 @@ public class RelativeGraph {
     graph.display();
     changeStyle();
     graph.display();
+    removeVertex(graph);
+    graph.display();
+    addVertex(graph);
+    graph.display();
+    addEdge(graph);
+    graph.display();
+    removeEdge(graph);
+    graph.display();
     graph.disconnect();
+  }
+
+  private static void removeEdge(GVSGraph graph) {
+    GVSDirectedEdge e = directedEdges.remove(directedEdges.size()-1);
+    graph.remove(e);
+  }
+
+  private static void addEdge(GVSGraph graph) {
+    int length = vertices.size();
+    TestDirectedEdge e = new TestDirectedEdge(vertices.get(length-1),
+        vertices.get(length-2),"e");
+    directedEdges.add(e);
+    graph.add(e);
+  }
+
+  private static void addVertex(GVSGraph graph) {
+    TestRelativeVertex v = new TestRelativeVertex(90, 90, "new");
+    vertices.add(v);
+    graph.add(v);
+  }
+
+  private static void removeVertex(GVSGraph graph) {
+    GVSRelativeVertex v = vertices.remove(0);
+    graph.remove(v);
   }
 
   private static void changeStyle() {
@@ -59,8 +91,8 @@ public class RelativeGraph {
 
   private static void createVertices(GVSGraph graph) {
     for (int i = 0; i < 5; i++) {
-      TestRelativeVertex v = new TestRelativeVertex(i * i + 1, i * 2 + 5,
-          "v" + i);
+      TestRelativeVertex v = new TestRelativeVertex(i * i + 1 * 10 % 100,
+          i * 2 + 5 * 10 % 100, "v" + i);
       vertices.add(v);
       graph.add(v);
     }
