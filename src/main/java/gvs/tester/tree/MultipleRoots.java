@@ -11,10 +11,10 @@ public class MultipleRoots {
 
   public static void main(String[] args) {
     GVSTreeWithCollection gvsTree = new GVSTreeWithCollection("Multiple Roots Tree");
-//    initNodes(1, 5);
-//    nodes.values().forEach(node -> gvsTree.add(node));
-//    gvsTree.display();
-//    nodes.clear();
+    initNodes(1, 5);
+    nodes.values().forEach(node -> gvsTree.add(node));
+    gvsTree.display();
+    nodes.clear();
     initNodes(10, 20);
     nodes.values().forEach(node -> gvsTree.add(node));
     gvsTree.display();

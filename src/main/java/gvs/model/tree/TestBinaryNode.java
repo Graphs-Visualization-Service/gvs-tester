@@ -14,6 +14,10 @@ public class TestBinaryNode implements GVSBinaryTreeNode {
     this.style = style;
   }
 
+  public TestBinaryNode(String label) {
+    this(label, null);
+  }
+
   @Override
   public String getNodeLabel() {
     return label;
@@ -66,10 +70,10 @@ public class TestBinaryNode implements GVSBinaryTreeNode {
       return false;
     return true;
   }
-  
+
   @Override
   public String toString() {
     return label;
   }
-  
+
 }
