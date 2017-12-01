@@ -1,6 +1,7 @@
 package gvs.model.graph;
 
 import gvs.graph.GVSDefaultVertex;
+import gvs.graph.GVSRelativeVertex;
 import gvs.graph.GVSUndirectedEdge;
 import gvs.styles.GVSStyle;
 
@@ -20,6 +21,14 @@ public class TestUndirectedEdge implements GVSUndirectedEdge {
     this(label, null); 
   }
   
+  public TestUndirectedEdge(GVSRelativeVertex from,
+      GVSRelativeVertex to, String label) {
+    this(label);
+    this.vertices = new GVSDefaultVertex[2];
+    setFromVertex(from);
+    setToVertex(to);
+  }
+
   public void setFromVertex(GVSDefaultVertex from) {
     vertices[0] = from;
   }
@@ -46,6 +55,16 @@ public class TestUndirectedEdge implements GVSUndirectedEdge {
   @Override
   public int hasArrow() {
     return arrowPosition;
+  }
+  
+  public void setArrow(int arrowPosition) {
+    if (arrowPosition == 1 || arrowPosition == 2) {
+      this.arrowPosition = arrowPosition;
+    }
+  }
+  
+  public void setStyle(GVSStyle style) {
+    this.style = style;
   }
 
 }

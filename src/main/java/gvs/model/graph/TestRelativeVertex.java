@@ -40,4 +40,8 @@ public class TestRelativeVertex implements GVSRelativeVertex {
     return y;
   }
 
+  public void setStyle(GVSStyle style) {
+    this.style = style;
+  }
+
 }
