@@ -23,18 +23,11 @@ public class IconGraph {
   private static List<GVSUndirectedEdge> undirectedEdges = new ArrayList<>();
 
   public static void main(String[] args) {
-    GVSGraph graph = new GVSGraph("Default Graph");
+    GVSGraph graph = new GVSGraph("Icon Graph");
     createVertices(graph);
     createEdges(graph);
     graph.display();
     graph.disconnect();
-  }
-
-  private static void changeStyle() {
-    ((TestDirectedEdge) directedEdges.get(0)).setStyle(
-        new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED, GVSLineThickness.BOLD));
-    ((TestDefaultVertex) vertices.get(0)).setStyle(new GVSStyle(GVSColor.RED,
-        GVSLineStyle.DOTTED, GVSLineThickness.SLIGHT, GVSColor.BLUE));
   }
 
   private static void createEdges(GVSGraph graph) {
