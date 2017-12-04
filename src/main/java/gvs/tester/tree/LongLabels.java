@@ -7,7 +7,7 @@ import gvs.model.tree.TestBinaryNode;
 import gvs.tree.GVSTreeWithCollection;
 
 public class LongLabels {
-  private static Map<String, TestBinaryNode> nodes = new HashMap<>();
+  private static Map<Integer, TestBinaryNode> nodes = new HashMap<>();
   private static final String LABEL = "loooooongLabelForTrees";
 
   public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class LongLabels {
       TestBinaryNode node = createOrGetNode(i);
       TestBinaryNode leftChild = createOrGetNode(2 * i);
       TestBinaryNode rightChild = null;
-      if (i != 19) {
+      if (i != 9) {
         rightChild = createOrGetNode(2 * i + 1);
       }
       node.setLeftChild(leftChild);
@@ -32,7 +32,7 @@ public class LongLabels {
   }
 
   private static TestBinaryNode createOrGetNode(int i) {
-    TestBinaryNode node = nodes.get(Integer.toString(i));
+    TestBinaryNode node = nodes.get(i);
     if (node == null) {
       node = createNode(i);
     }
@@ -41,7 +41,7 @@ public class LongLabels {
 
   private static TestBinaryNode createNode(int i) {
     TestBinaryNode node = new TestBinaryNode(LABEL + i, null);
-    nodes.put(node.getNodeLabel(), node);
+    nodes.put(i, node);
     return node;
   }
 

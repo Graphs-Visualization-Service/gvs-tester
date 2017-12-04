@@ -1,4 +1,4 @@
-package gvs.tester.graph;
+package gvs.tester;
 
 import java.util.ArrayList;
 import java.util.List;

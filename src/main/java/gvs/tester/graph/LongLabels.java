@@ -8,14 +8,14 @@ import gvs.graph.GVSGraph;
 import gvs.model.graph.TestDefaultVertex;
 import gvs.model.graph.TestUndirectedEdge;
 
-public class LongLabelsGraph {
+public class LongLabels {
   private List<TestDefaultVertex> vertices = new ArrayList<>();
   private List<TestUndirectedEdge> edges = new ArrayList<>();
   private final String LONG_LABEL = "LoooooongLabelForGraphs";
 
   public static void main(String[] args) {
     GVSGraph graph = new GVSGraph("Long Labels Graph");
-    LongLabelsGraph test = new LongLabelsGraph();
+    LongLabels test = new LongLabels();
     test.buildGraph(graph);
     graph.add(test.getVertices());
     graph.add(test.getEdges());

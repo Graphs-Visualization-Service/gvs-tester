@@ -20,7 +20,47 @@ public class BinaryTree {
     GVSTreeWithCollection tree = new GVSTreeWithCollection("Binary Tree");
     createVertices(tree);
     tree.display();
+    addNode(tree);
+    tree.display();
+    removeNode(tree);
+    tree.display();
+    changeStyle(tree);
+    tree.display();
     tree.disconnect();
+  }
+
+  private static void changeStyle(GVSTreeWithCollection tree) {
+    ((TestBinaryNode) vertices.get(1)).setStyle(new GVSStyle(GVSColor.RED,
+        GVSLineStyle.DASHED, GVSLineThickness.SLIGHT));
+    ((TestBinaryNode) vertices.get(3)).setStyle(new GVSStyle(GVSColor.BLUE,
+        GVSLineStyle.DOTTED, GVSLineThickness.FAT, GVSColor.ORANGE));
+  }
+
+  private static void removeNode(GVSTreeWithCollection tree) {
+    GVSBinaryTreeNode node = vertices.get(4);
+    removeNode(tree, node);
+  }
+
+  private static void removeNode(GVSTreeWithCollection tree,
+      GVSBinaryTreeNode node) {
+    GVSBinaryTreeNode left = node.getGVSLeftChild();
+    GVSBinaryTreeNode right = node.getGVSRightChild();
+    if (left != null) {
+      removeNode(tree, left);
+    }
+    if (right != null) {
+      removeNode(tree, right);
+    }
+    vertices.remove(node);
+    tree.remove(node);
+
+  }
+
+  private static void addNode(GVSTreeWithCollection tree) {
+    TestBinaryNode v = new TestBinaryNode("new");
+    vertices.add(v);
+    ((TestBinaryNode) vertices.get(1)).setRightChild(v);
+    tree.add(v);
   }
 
   private static void createVertices(GVSTreeWithCollection tree) {
@@ -40,7 +80,7 @@ public class BinaryTree {
     vertices.add(v7);
     TestBinaryNode v8 = new TestBinaryNode("v8");
     vertices.add(v8);
-    
+
     v1.setLeftChild(v2);
     v1.setRightChild(v3);
     v3.setLeftChild(v4);
