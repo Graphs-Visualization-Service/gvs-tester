@@ -36,7 +36,21 @@ public class RelativeGraph {
     graph.display();
     removeEdge(graph);
     graph.display();
+    createUndirectedWithArrow(graph);
+    graph.display();
     graph.disconnect();
+  }
+
+  private static void createUndirectedWithArrow(GVSGraph graph) {
+    int length = vertices.size();
+    TestUndirectedEdge e = new TestUndirectedEdge(vertices.get(length-1),
+        vertices.get(length-2),"e");
+    undirectedEdges.add(e);
+    graph.add(e);
+    graph.display();
+    e.setArrow(2);
+    graph.display();
+    e.setArrow(1);
   }
 
   private static void removeEdge(GVSGraph graph) {
