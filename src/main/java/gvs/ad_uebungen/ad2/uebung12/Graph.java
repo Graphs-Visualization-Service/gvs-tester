@@ -5,13 +5,6 @@
 
 package gvs.ad_uebungen.ad2.uebung12;
 
-import gvs.graph.GVSGraph;
-import gvs.tree.GVSTreeWithCollection;
-import gvs.styles.GVSStyle;
-import gvs.styles.GVSColor;
-import gvs.styles.GVSLineStyle;
-import gvs.styles.GVSLineThickness;
-
 import java.util.Collections;
 import java.util.Deque;
 import java.util.HashMap;
@@ -22,6 +15,13 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import javax.swing.JOptionPane;
+
+import gvs.graph.GVSGraph;
+import gvs.styles.GVSColor;
+import gvs.styles.GVSLineStyle;
+import gvs.styles.GVSLineThickness;
+import gvs.styles.GVSStyle;
+import gvs.tree.GVSTreeWithCollection;
 
 public class Graph {
   

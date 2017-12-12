@@ -5,9 +5,9 @@
 
 package gvs.ad_uebungen.ad2.uebung03;
 
+import gvs.styles.GVSStyle;
 import gvs.tree.GVSBinaryTreeNode;
 import gvs.tree.GVSTreeWithRoot;
-import gvs.styles.GVSStyle;
 
 class AVLTreeImplGVS<K extends Comparable<? super K>, V> extends
     AVLTreeImpl<K, V> {

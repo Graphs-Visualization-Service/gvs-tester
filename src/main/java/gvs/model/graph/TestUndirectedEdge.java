@@ -1,7 +1,6 @@
 package gvs.model.graph;
 
 import gvs.graph.GVSDefaultVertex;
-import gvs.graph.GVSRelativeVertex;
 import gvs.graph.GVSUndirectedEdge;
 import gvs.styles.GVSStyle;
 

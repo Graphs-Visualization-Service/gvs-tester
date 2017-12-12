@@ -5,7 +5,6 @@ import java.util.List;
 
 import gvs.model.tree.TestBinaryNode;
 import gvs.styles.GVSColor;
-import gvs.styles.GVSIcon;
 import gvs.styles.GVSLineStyle;
 import gvs.styles.GVSLineThickness;
 import gvs.styles.GVSStyle;

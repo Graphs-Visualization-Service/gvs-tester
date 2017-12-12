@@ -4,9 +4,9 @@
  */
 
 package gvs.ad_uebungen.ad1.uebung12.aufgabe02;
+import gvs.styles.GVSStyle;
 import gvs.tree.GVSBinaryTreeNode;
 import gvs.tree.GVSTreeWithRoot;
-import gvs.styles.GVSStyle;
 
 public class PriorityQueueGVS<K extends Comparable<? super K>, V> extends PriorityQueue<K, V> {
 

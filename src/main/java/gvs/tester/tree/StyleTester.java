@@ -2,13 +2,7 @@ package gvs.tester.tree;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-import gvs.graph.GVSDefaultVertex;
-import gvs.graph.GVSGraph;
-import gvs.graph.GVSUndirectedEdge;
-import gvs.model.graph.TestDefaultVertex;
-import gvs.model.graph.TestUndirectedEdge;
 import gvs.model.tree.TestBinaryNode;
 import gvs.styles.GVSColor;
 import gvs.styles.GVSIcon;

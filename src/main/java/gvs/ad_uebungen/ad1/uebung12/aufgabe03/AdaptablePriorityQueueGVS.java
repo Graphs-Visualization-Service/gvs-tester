@@ -5,11 +5,11 @@
 
 package gvs.ad_uebungen.ad1.uebung12.aufgabe03;
 
-import gvs.tree.GVSBinaryTreeNode;
-import gvs.tree.GVSTreeWithRoot;
 import gvs.ad_uebungen.ad1.uebung12.aufgabe02.Entry;
 import gvs.ad_uebungen.ad1.uebung12.aufgabe02.FullPriorityQueueException;
 import gvs.styles.GVSStyle;
+import gvs.tree.GVSBinaryTreeNode;
+import gvs.tree.GVSTreeWithRoot;
 
 public class AdaptablePriorityQueueGVS<K extends Comparable<? super K>, V> extends AdaptablePriorityQueue<K, V> {
 

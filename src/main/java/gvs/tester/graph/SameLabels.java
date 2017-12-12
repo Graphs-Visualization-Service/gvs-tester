@@ -10,10 +10,6 @@ import gvs.graph.GVSUndirectedEdge;
 import gvs.model.graph.TestDefaultVertex;
 import gvs.model.graph.TestDirectedEdge;
 import gvs.model.graph.TestUndirectedEdge;
-import gvs.styles.GVSColor;
-import gvs.styles.GVSLineStyle;
-import gvs.styles.GVSLineThickness;
-import gvs.styles.GVSStyle;
 
 public class SameLabels {
 

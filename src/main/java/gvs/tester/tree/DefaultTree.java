@@ -4,12 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gvs.model.tree.TestDefaultNode;
-import gvs.styles.GVSColor;
-import gvs.styles.GVSIcon;
-import gvs.styles.GVSLineStyle;
-import gvs.styles.GVSLineThickness;
-import gvs.styles.GVSStyle;
-import gvs.tree.GVSBinaryTreeNode;
 import gvs.tree.GVSDefaultTreeNode;
 import gvs.tree.GVSTreeWithCollection;
 

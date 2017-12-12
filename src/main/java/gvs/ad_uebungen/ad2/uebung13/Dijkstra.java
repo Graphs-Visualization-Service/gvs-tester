@@ -12,16 +12,16 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import net.datastructures.AdaptablePriorityQueue;
-import net.datastructures.AdjacencyListGraph;
-import net.datastructures.Edge;
-import net.datastructures.Entry;
-import net.datastructures.Vertex;
 import ch.hsr.prog2.dijkstragvs.AdjacencyListGraphGVS;
 import ch.hsr.prog2.dijkstragvs.GvsSupport;
 import ch.hsr.prog2.dijkstragvs.HeapAdaptablePriorityQueueGVS;
 import ch.hsr.prog2.dijkstragvs.LinkedHashMapGVS;
 import ch.hsr.prog2.dijkstragvs.Prog2Formatter;
+import net.datastructures.AdaptablePriorityQueue;
+import net.datastructures.AdjacencyListGraph;
+import net.datastructures.Edge;
+import net.datastructures.Entry;
+import net.datastructures.Vertex;
 
 @SuppressWarnings({"unchecked","rawtypes"})
 
