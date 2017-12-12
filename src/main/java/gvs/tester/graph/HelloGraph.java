@@ -9,13 +9,13 @@ import gvs.business.styles.GVSLineStyle;
 import gvs.business.styles.GVSLineThickness;
 import gvs.business.styles.GVSStyle;
 
-public class HelloWorld {
+public class HelloGraph {
 
   public static void main(String[] args) {
     GVSGraph graph = new GVSGraph("Hello World Graph");
-    TestDefaultVertex v1 = new TestDefaultVertex("Hello");
-    TestDefaultVertex v2 = new TestDefaultVertex("World");
-    TestDirectedEdge e = new TestDirectedEdge(v1, v2, "GVS");
+    TestDefaultVertex v1 = new TestDefaultVertex("V1");
+    TestDefaultVertex v2 = new TestDefaultVertex("V2");
+    TestDirectedEdge e = new TestDirectedEdge(v1, v2, "V1 to V2");
 
     graph.add(v1);
     graph.add(v2);
