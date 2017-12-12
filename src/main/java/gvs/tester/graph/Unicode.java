@@ -10,10 +10,6 @@ import gvs.business.graph.GVSUndirectedEdge;
 import gvs.model.graph.TestDefaultVertex;
 import gvs.model.graph.TestDirectedEdge;
 import gvs.model.graph.TestUndirectedEdge;
-import gvs.business.styles.GVSColor;
-import gvs.business.styles.GVSLineStyle;
-import gvs.business.styles.GVSLineThickness;
-import gvs.business.styles.GVSStyle;
 
 public class Unicode {
 
