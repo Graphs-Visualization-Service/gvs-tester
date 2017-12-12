@@ -3,17 +3,17 @@ package gvs.tester.graph;
 import java.util.ArrayList;
 import java.util.List;
 
-import gvs.graph.GVSDefaultVertex;
-import gvs.graph.GVSDirectedEdge;
-import gvs.graph.GVSGraph;
-import gvs.graph.GVSUndirectedEdge;
+import gvs.business.graph.GVSDefaultVertex;
+import gvs.business.graph.GVSDirectedEdge;
+import gvs.business.graph.GVSGraph;
+import gvs.business.graph.GVSUndirectedEdge;
 import gvs.model.graph.TestDefaultVertex;
 import gvs.model.graph.TestDirectedEdge;
 import gvs.model.graph.TestUndirectedEdge;
-import gvs.styles.GVSColor;
-import gvs.styles.GVSLineStyle;
-import gvs.styles.GVSLineThickness;
-import gvs.styles.GVSStyle;
+import gvs.business.styles.GVSColor;
+import gvs.business.styles.GVSLineStyle;
+import gvs.business.styles.GVSLineThickness;
+import gvs.business.styles.GVSStyle;
 
 public class Unicode {
 

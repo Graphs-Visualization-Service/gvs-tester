@@ -1,13 +1,13 @@
 package gvs.tester.graph;
 
-import gvs.graph.GVSGraph;
+import gvs.business.graph.GVSGraph;
 import gvs.model.graph.TestDefaultVertex;
 import gvs.model.graph.TestDirectedEdge;
-import gvs.styles.GVSColor;
-import gvs.styles.GVSIcon;
-import gvs.styles.GVSLineStyle;
-import gvs.styles.GVSLineThickness;
-import gvs.styles.GVSStyle;
+import gvs.business.styles.GVSColor;
+import gvs.business.styles.GVSIcon;
+import gvs.business.styles.GVSLineStyle;
+import gvs.business.styles.GVSLineThickness;
+import gvs.business.styles.GVSStyle;
 
 public class HelloWorld {
 
