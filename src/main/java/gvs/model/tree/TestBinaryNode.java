@@ -1,7 +1,7 @@
 package gvs.model.tree;
 
-import gvs.styles.GVSStyle;
-import gvs.tree.GVSBinaryTreeNode;
+import gvs.business.styles.GVSStyle;
+import gvs.business.tree.GVSBinaryTreeNode;
 
 public class TestBinaryNode implements GVSBinaryTreeNode {
   String label;

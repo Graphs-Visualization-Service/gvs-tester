@@ -1,7 +1,7 @@
 package gvs.model.graph;
 
-import gvs.graph.GVSDefaultVertex;
-import gvs.styles.GVSStyle;
+import gvs.business.graph.GVSDefaultVertex;
+import gvs.business.styles.GVSStyle;
 
 public class TestDefaultVertex implements GVSDefaultVertex {
   private String label;

@@ -2,8 +2,8 @@ package gvs.tester.tree;
 
 import java.util.Vector;
 
+import gvs.business.tree.GVSTreeWithRoot;
 import gvs.model.tree.TestBinaryNode;
-import gvs.tree.GVSTreeWithRoot;
 
 public class ClusterSplitter {
 

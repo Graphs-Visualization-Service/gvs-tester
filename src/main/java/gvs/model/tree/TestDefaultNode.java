@@ -1,7 +1,7 @@
 package gvs.model.tree;
 
-import gvs.styles.GVSStyle;
-import gvs.tree.GVSDefaultTreeNode;
+import gvs.business.styles.GVSStyle;
+import gvs.business.tree.GVSDefaultTreeNode;
 
 public class TestDefaultNode implements GVSDefaultTreeNode {
 

@@ -5,9 +5,9 @@
 
 package gvs.ad_uebungen.ad2.uebung12;
 
-import gvs.graph.GVSDefaultVertex;
-import gvs.graph.GVSDirectedEdge;
-import gvs.styles.GVSStyle;
+import gvs.business.graph.GVSDefaultVertex;
+import gvs.business.graph.GVSDirectedEdge;
+import gvs.business.styles.GVSStyle;
 
 public class Edge implements Comparable<Edge>, GVSDirectedEdge {
 

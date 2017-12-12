@@ -5,9 +5,9 @@
 
 package gvs.ad_uebungen.ad2.uebung03;
 
-import gvs.styles.GVSStyle;
-import gvs.tree.GVSBinaryTreeNode;
-import gvs.tree.GVSTreeWithRoot;
+import gvs.business.styles.GVSStyle;
+import gvs.business.tree.GVSBinaryTreeNode;
+import gvs.business.tree.GVSTreeWithRoot;
 
 public class BinarySearchTreeGVS<K extends Comparable<? super K>, V> extends
     BinarySearchTree<K, V> {

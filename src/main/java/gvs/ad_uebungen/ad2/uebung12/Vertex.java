@@ -5,8 +5,8 @@
 
 package gvs.ad_uebungen.ad2.uebung12;
 
-import gvs.graph.GVSRelativeVertex;
-import gvs.styles.GVSStyle;
+import gvs.business.graph.GVSRelativeVertex;
+import gvs.business.styles.GVSStyle;
 
 public class Vertex implements Comparable<Vertex>, GVSRelativeVertex {
 

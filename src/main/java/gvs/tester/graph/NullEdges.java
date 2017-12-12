@@ -1,6 +1,6 @@
 package gvs.tester.graph;
 
-import gvs.graph.GVSGraph;
+import gvs.business.graph.GVSGraph;
 import gvs.model.graph.TestDefaultVertex;
 import gvs.model.graph.TestDirectedEdge;
 

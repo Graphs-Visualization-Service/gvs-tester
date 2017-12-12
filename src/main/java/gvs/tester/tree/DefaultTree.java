@@ -3,9 +3,9 @@ package gvs.tester.tree;
 import java.util.ArrayList;
 import java.util.List;
 
+import gvs.business.tree.GVSDefaultTreeNode;
+import gvs.business.tree.GVSTreeWithCollection;
 import gvs.model.tree.TestDefaultNode;
-import gvs.tree.GVSDefaultTreeNode;
-import gvs.tree.GVSTreeWithCollection;
 
 public class DefaultTree {
 

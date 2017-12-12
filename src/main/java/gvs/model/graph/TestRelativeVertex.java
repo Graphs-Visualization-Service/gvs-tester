@@ -1,7 +1,7 @@
 package gvs.model.graph;
 
-import gvs.graph.GVSRelativeVertex;
-import gvs.styles.GVSStyle;
+import gvs.business.graph.GVSRelativeVertex;
+import gvs.business.styles.GVSStyle;
 
 public class TestRelativeVertex implements GVSRelativeVertex {
   private double x;

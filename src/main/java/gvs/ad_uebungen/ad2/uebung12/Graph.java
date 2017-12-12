@@ -16,12 +16,12 @@ import java.util.stream.Collectors;
 
 import javax.swing.JOptionPane;
 
-import gvs.graph.GVSGraph;
-import gvs.styles.GVSColor;
-import gvs.styles.GVSLineStyle;
-import gvs.styles.GVSLineThickness;
-import gvs.styles.GVSStyle;
-import gvs.tree.GVSTreeWithCollection;
+import gvs.business.graph.GVSGraph;
+import gvs.business.styles.GVSColor;
+import gvs.business.styles.GVSLineStyle;
+import gvs.business.styles.GVSLineThickness;
+import gvs.business.styles.GVSStyle;
+import gvs.business.tree.GVSTreeWithCollection;
 
 public class Graph {
   

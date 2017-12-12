@@ -1,8 +1,8 @@
 package gvs.tester.tree;
 
 
+import gvs.business.tree.GVSTreeWithCollection;
 import gvs.model.tree.TestBinaryNode;
-import gvs.tree.GVSTreeWithCollection;
 
 public class RemoveRootCollection {
 

@@ -1,8 +1,8 @@
 package gvs.model.graph;
 
-import gvs.graph.GVSDefaultVertex;
-import gvs.graph.GVSDirectedEdge;
-import gvs.styles.GVSStyle;
+import gvs.business.graph.GVSDefaultVertex;
+import gvs.business.graph.GVSDirectedEdge;
+import gvs.business.styles.GVSStyle;
 
 public class TestDirectedEdge implements GVSDirectedEdge {
   private GVSDefaultVertex startVertex;

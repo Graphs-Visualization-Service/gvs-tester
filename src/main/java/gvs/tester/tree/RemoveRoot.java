@@ -1,7 +1,7 @@
 package gvs.tester.tree;
 
+import gvs.business.tree.GVSTreeWithRoot;
 import gvs.model.tree.TestBinaryNode;
-import gvs.tree.GVSTreeWithRoot;
 
 public class RemoveRoot {
   /**

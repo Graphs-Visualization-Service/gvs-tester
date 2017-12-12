@@ -3,8 +3,8 @@ package gvs.tester.tree;
 import java.util.HashMap;
 import java.util.Map;
 
+import gvs.business.tree.GVSTreeWithCollection;
 import gvs.model.tree.TestBinaryNode;
-import gvs.tree.GVSTreeWithCollection;
 
 public class LongLabels {
   private static Map<Integer, TestBinaryNode> nodes = new HashMap<>();

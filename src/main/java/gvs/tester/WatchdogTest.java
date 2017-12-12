@@ -2,7 +2,7 @@ package gvs.tester;
 
 import java.util.List;
 
-import gvs.graph.GVSGraph;
+import gvs.business.graph.GVSGraph;
 import gvs.model.graph.TestDefaultVertex;
 import gvs.model.graph.TestDirectedEdge;
 

@@ -1,8 +1,8 @@
 package gvs.model.graph;
 
-import gvs.graph.GVSDefaultVertex;
-import gvs.graph.GVSUndirectedEdge;
-import gvs.styles.GVSStyle;
+import gvs.business.graph.GVSDefaultVertex;
+import gvs.business.graph.GVSUndirectedEdge;
+import gvs.business.styles.GVSStyle;
 
 public class TestUndirectedEdge implements GVSUndirectedEdge {
   private String label;

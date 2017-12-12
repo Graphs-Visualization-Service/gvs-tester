@@ -3,9 +3,9 @@ package gvs.tester.tree;
 import java.util.ArrayList;
 import java.util.List;
 
+import gvs.business.tree.GVSBinaryTreeNode;
+import gvs.business.tree.GVSTreeWithCollection;
 import gvs.model.tree.TestBinaryNode;
-import gvs.tree.GVSBinaryTreeNode;
-import gvs.tree.GVSTreeWithCollection;
 
 public class SameLabels {
 

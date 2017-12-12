@@ -1,6 +1,6 @@
 package gvs.tester.graph;
 
-import gvs.graph.GVSGraph;
+import gvs.business.graph.GVSGraph;
 
 public class EmptyGraph {
   public static void main(String[] args) {

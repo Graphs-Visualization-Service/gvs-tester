@@ -3,14 +3,14 @@ package gvs.tester.tree;
 import java.util.ArrayList;
 import java.util.List;
 
+import gvs.business.styles.GVSColor;
+import gvs.business.styles.GVSIcon;
+import gvs.business.styles.GVSLineStyle;
+import gvs.business.styles.GVSLineThickness;
+import gvs.business.styles.GVSStyle;
+import gvs.business.tree.GVSBinaryTreeNode;
+import gvs.business.tree.GVSTreeWithCollection;
 import gvs.model.tree.TestBinaryNode;
-import gvs.styles.GVSColor;
-import gvs.styles.GVSIcon;
-import gvs.styles.GVSLineStyle;
-import gvs.styles.GVSLineThickness;
-import gvs.styles.GVSStyle;
-import gvs.tree.GVSBinaryTreeNode;
-import gvs.tree.GVSTreeWithCollection;
 
 public class StyleTester {
   private static List<GVSBinaryTreeNode> vertices = new ArrayList<>();
