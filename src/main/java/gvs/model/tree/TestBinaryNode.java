@@ -45,7 +45,7 @@ public class TestBinaryNode implements GVSBinaryTreeNode {
   public void setLeftChild(GVSBinaryTreeNode child) {
     this.leftChild = child;
   }
-  
+
   public void setStyle(GVSStyle style) {
     this.style = style;
   }

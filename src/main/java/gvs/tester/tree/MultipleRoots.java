@@ -10,7 +10,8 @@ public class MultipleRoots {
   static Map<String, TestBinaryNode> nodes = new HashMap<>();
 
   public static void main(String[] args) {
-    GVSTreeWithCollection gvsTree = new GVSTreeWithCollection("Multiple Roots Tree");
+    GVSTreeWithCollection gvsTree = new GVSTreeWithCollection(
+        "Multiple Roots Tree");
     initNodes(1, 5);
     nodes.values().forEach(node -> gvsTree.add(node));
     gvsTree.display();

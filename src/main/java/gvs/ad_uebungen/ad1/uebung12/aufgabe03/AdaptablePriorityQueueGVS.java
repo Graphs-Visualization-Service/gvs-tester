@@ -11,11 +11,14 @@ import gvs.business.styles.GVSStyle;
 import gvs.business.tree.GVSBinaryTreeNode;
 import gvs.business.tree.GVSTreeWithRoot;
 
-public class AdaptablePriorityQueueGVS<K extends Comparable<? super K>, V> extends AdaptablePriorityQueue<K, V> {
+public class AdaptablePriorityQueueGVS<K extends Comparable<? super K>, V>
+    extends AdaptablePriorityQueue<K, V> {
 
-  protected GVSTreeWithRoot gvsTree = new GVSTreeWithRoot("AdaptablePriorityQueue");
+  protected GVSTreeWithRoot gvsTree = new GVSTreeWithRoot(
+      "AdaptablePriorityQueue");
 
-  protected class APQEntryGVS extends AdaptablePriorityQueue.APQEntry<K, V> implements GVSBinaryTreeNode {
+  protected class APQEntryGVS extends AdaptablePriorityQueue.APQEntry<K, V>
+      implements GVSBinaryTreeNode {
 
     protected APQEntryGVS(K key, V value, int index) {
       super(key, value, index);
@@ -23,16 +26,18 @@ public class AdaptablePriorityQueueGVS<K extends Comparable<? super K>, V> exten
 
     public GVSBinaryTreeNode getGVSLeftChild() {
       int leftIndex = index * 2;
-      return (GVSBinaryTreeNode) (leftIndex <= last ? heapArray[leftIndex] : null);
+      return (GVSBinaryTreeNode) (leftIndex <= last ? heapArray[leftIndex]
+          : null);
     }
 
     public GVSBinaryTreeNode getGVSRightChild() {
       int rightIndex = index * 2 + 1;
-      return (GVSBinaryTreeNode) (rightIndex <= last ? heapArray[rightIndex] : null);
+      return (GVSBinaryTreeNode) (rightIndex <= last ? heapArray[rightIndex]
+          : null);
     }
 
     public String getNodeLabel() {
-      APQEntry<K, V> e = (APQEntry<K, V>)heapArray[index];
+      APQEntry<K, V> e = (APQEntry<K, V>) heapArray[index];
       return e.getKey().toString() + " / " + e.getValue().toString();
     }
 
@@ -42,11 +47,11 @@ public class AdaptablePriorityQueueGVS<K extends Comparable<? super K>, V> exten
     }
 
   } // class AdaptablePriorityQueueGVS.APQEntryGVS
-  
+
   AdaptablePriorityQueueGVS(int maxSize) {
     super(maxSize);
   }
-  
+
   @Override
   protected PQEntry<K, V> newEntry(K key, V value) {
     return new APQEntryGVS(key, value, last);
@@ -59,7 +64,7 @@ public class AdaptablePriorityQueueGVS<K extends Comparable<? super K>, V> exten
     gvsTree.display();
     return newEntry;
   }
-  
+
   @Override
   public Entry<K, V> removeMin() {
     Entry<K, V> removedEntry = super.removeMin();
@@ -67,15 +72,16 @@ public class AdaptablePriorityQueueGVS<K extends Comparable<? super K>, V> exten
     gvsTree.display();
     return removedEntry;
   }
-  
+
   @Override
-  public K replaceKey(Entry<K, V> entry, K newKey) throws InvalidEntryException {
+  public K replaceKey(Entry<K, V> entry, K newKey)
+      throws InvalidEntryException {
     K oldKey = super.replaceKey(entry, newKey);
     gvsTree.setRoot((GVSBinaryTreeNode) heapArray[1]);
     gvsTree.display();
     return oldKey;
   }
-  
+
   @Override
   public Entry<K, V> remove(Entry<K, V> entry) throws InvalidEntryException {
     Entry<K, V> removedEntry = super.remove(entry);
@@ -83,14 +89,14 @@ public class AdaptablePriorityQueueGVS<K extends Comparable<? super K>, V> exten
     gvsTree.display();
     return removedEntry;
   }
-  
+
   @Override
   protected void swap(int parent, int child) {
     super.swap(parent, child);
     gvsTree.setRoot((GVSBinaryTreeNode) heapArray[1]);
     gvsTree.display();
   }
-  
+
   @Override
   public void displayOnGVS() {
     gvsTree.setRoot((GVSBinaryTreeNode) heapArray[1]);
@@ -98,4 +104,3 @@ public class AdaptablePriorityQueueGVS<K extends Comparable<? super K>, V> exten
   }
 
 }
- 

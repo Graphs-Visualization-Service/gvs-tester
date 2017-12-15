@@ -9,15 +9,14 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-class AVLTreeImpl<K extends Comparable<? super K>, V> extends
-    BinarySearchTree<K, V> {
-  
+class AVLTreeImpl<K extends Comparable<? super K>, V>
+    extends BinarySearchTree<K, V> {
+
   /**
-   * After the BST-operation 'insert()': 
-   * actionNode shall point to the parent of the new inserted node.
+   * After the BST-operation 'insert()': actionNode shall point to the parent of
+   * the new inserted node.
    */
   protected AVLNode actionNode;
-
 
   protected class AVLNode extends BinarySearchTree<K, V>.Node {
 
@@ -60,11 +59,11 @@ class AVLTreeImpl<K extends Comparable<? super K>, V> extends
 
     @Override
     public String toString() {
-      String result = String.format("%2d - %-6s : h=%d", 
-                             getEntry().getKey(), getEntry().getValue(), height);
+      String result = String.format("%2d - %-6s : h=%d", getEntry().getKey(),
+          getEntry().getValue(), height);
       if (parent == null) {
         result += " ROOT";
-      } else {  
+      } else {
         boolean left = (parent.getLeftChild() == this) ? true : false;
         result += (left ? " / " : " \\ ") + "parent(key)="
             + parent.getEntry().getKey();
@@ -74,17 +73,16 @@ class AVLTreeImpl<K extends Comparable<? super K>, V> extends
 
   } // End of class AVLNode
 
-  
   protected AVLNode getRoot() {
     return avlNode(root);
   }
-  
+
   public V put(K key, V value) {
     Entry<K, V> entry = find(key);
-    if (entry != null) { 
+    if (entry != null) {
       // key already exists in the Tree
       return entry.setValue(value);
-    } else { 
+    } else {
       // key does not exist in the Tree yet
       super.insert(key, value);
       assureHeights(actionNode);
@@ -92,7 +90,7 @@ class AVLTreeImpl<K extends Comparable<? super K>, V> extends
       return null;
     }
   }
-  
+
   public V get(K key) {
     Entry<K, V> entry = super.find(key);
     if (entry != null) {
@@ -101,15 +99,15 @@ class AVLTreeImpl<K extends Comparable<? super K>, V> extends
       return null;
     }
   }
-  
+
   @Override
   protected Node insert(Node node, Entry<K, V> entry) {
-    if (node != null) { 
+    if (node != null) {
       actionNode = avlNode(node);
-    } 
+    }
     // calling now the BST-insert() which will do the work:
     AVLNode result = avlNode(super.insert(node, entry));
-    if (node == null) { 
+    if (node == null) {
       // In this case: result of super.insert() is the new node!
       result.setParent(actionNode);
     }
@@ -125,7 +123,7 @@ class AVLTreeImpl<K extends Comparable<? super K>, V> extends
   public int getHeight() {
     return height(avlNode(root));
   }
-  
+
   /**
    * Returns the height of this node.
    * 
@@ -135,7 +133,7 @@ class AVLTreeImpl<K extends Comparable<? super K>, V> extends
   protected int height(AVLNode node) {
     return (node != null) ? node.getHeight() : -1;
   }
-  
+
   /**
    * Assures the heights of the tree from 'node' up to the root.
    * 
@@ -163,7 +161,7 @@ class AVLTreeImpl<K extends Comparable<? super K>, V> extends
     int heightRightChild = height(node.getRightChild());
     node.setHeight(1 + Math.max(heightLeftChild, heightRightChild));
   }
-  
+
   /**
    * Factory-Method. Creates a new node.
    * 
@@ -175,7 +173,7 @@ class AVLTreeImpl<K extends Comparable<? super K>, V> extends
   protected Node newNode(Entry<K, V> entry) {
     return new AVLNode(entry);
   }
-  
+
   /**
    * Generates an inorder-node-list.
    * 
@@ -191,20 +189,18 @@ class AVLTreeImpl<K extends Comparable<? super K>, V> extends
     nodeList.add(node);
     inorder(nodeList, node.getRightChild());
   }
-  
+
   @SuppressWarnings("unchecked")
   protected AVLNode avlNode(Node node) {
-    return (AVLNode)node;
+    return (AVLNode) node;
   }
-  
+
   public void print() {
     List<AVLNode> nodeList = new LinkedList<>();
     inorder(nodeList, avlNode(root));
-    for (AVLNode node: nodeList) {
+    for (AVLNode node : nodeList) {
       System.out.println(node + "  ");
     }
   }
-  
-}
 
- 
+}

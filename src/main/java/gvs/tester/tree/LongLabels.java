@@ -12,7 +12,8 @@ public class LongLabels {
 
   public static void main(String[] args) {
     initNodes();
-    GVSTreeWithCollection gvsTree = new GVSTreeWithCollection("Long Labels Tree Test");
+    GVSTreeWithCollection gvsTree = new GVSTreeWithCollection(
+        "Long Labels Tree Test");
     nodes.values().forEach(node -> gvsTree.add(node));
     gvsTree.display();
     gvsTree.disconnect();

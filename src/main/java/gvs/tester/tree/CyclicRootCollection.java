@@ -25,7 +25,7 @@ public class CyclicRootCollection {
     vertices.add(v2);
     TestBinaryNode v3 = new TestBinaryNode("v3");
     vertices.add(v3);
-    
+
     v1.setLeftChild(v2);
     v2.setRightChild(v3);
     v3.setRightChild(v2);

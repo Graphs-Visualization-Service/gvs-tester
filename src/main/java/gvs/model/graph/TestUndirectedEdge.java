@@ -15,13 +15,13 @@ public class TestUndirectedEdge implements GVSUndirectedEdge {
     this.style = style;
     this.vertices = new GVSDefaultVertex[2];
   }
-  
+
   public TestUndirectedEdge(String label) {
-    this(label, null); 
+    this(label, null);
   }
-  
-  public TestUndirectedEdge(GVSDefaultVertex from,
-      GVSDefaultVertex to, String label) {
+
+  public TestUndirectedEdge(GVSDefaultVertex from, GVSDefaultVertex to,
+      String label) {
     this(label);
     this.vertices = new GVSDefaultVertex[2];
     setFromVertex(from);
@@ -31,7 +31,7 @@ public class TestUndirectedEdge implements GVSUndirectedEdge {
   public void setFromVertex(GVSDefaultVertex from) {
     vertices[0] = from;
   }
-  
+
   public void setToVertex(GVSDefaultVertex to) {
     vertices[1] = to;
   }
@@ -55,13 +55,13 @@ public class TestUndirectedEdge implements GVSUndirectedEdge {
   public int hasArrow() {
     return arrowPosition;
   }
-  
+
   public void setArrow(int arrowPosition) {
     if (arrowPosition == 1 || arrowPosition == 2) {
       this.arrowPosition = arrowPosition;
     }
   }
-  
+
   public void setStyle(GVSStyle style) {
     this.style = style;
   }

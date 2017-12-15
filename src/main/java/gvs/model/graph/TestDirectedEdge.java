@@ -42,7 +42,7 @@ public class TestDirectedEdge implements GVSDirectedEdge {
   public GVSStyle getStyle() {
     return style;
   }
-  
+
   public void setStyle(GVSStyle style) {
     this.style = style;
   }

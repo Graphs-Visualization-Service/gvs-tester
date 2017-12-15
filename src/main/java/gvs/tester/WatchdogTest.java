@@ -7,7 +7,7 @@ import gvs.model.graph.TestDefaultVertex;
 import gvs.model.graph.TestDirectedEdge;
 
 public class WatchdogTest {
-  private static List<TestDirectedEdge> edges ;
+  private static List<TestDirectedEdge> edges;
 
   public static void main(String[] args) {
     GVSGraph graph = new GVSGraph("Watchdog test");

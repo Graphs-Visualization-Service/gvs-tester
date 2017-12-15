@@ -13,7 +13,6 @@ public class EmptyString {
     graph.disconnect();
   }
 
-
   private static void addVertices(GVSGraph graph) {
     TestDefaultVertex v = new TestDefaultVertex("");
     TestDefaultVertex v2 = new TestDefaultVertex(null);

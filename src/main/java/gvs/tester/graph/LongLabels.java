@@ -26,7 +26,7 @@ public class LongLabels {
   public List<TestDefaultVertex> getVertices() {
     return vertices;
   }
-  
+
   public List<TestUndirectedEdge> getEdges() {
     return edges;
   }

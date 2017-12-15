@@ -50,20 +50,20 @@ public class IconGraph {
   }
 
   private static void createVertices(GVSGraph graph) {
-      TestDefaultVertex v = new TestDefaultVertex("anchor",
-          new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED, GVSLineThickness.BOLD,
-              GVSColor.BLUE, GVSIcon.ANCHOR));
-      vertices.add(v);
-      graph.add(v);
-      TestDefaultVertex v2 = new TestDefaultVertex("",
-          new GVSStyle(GVSColor.WHITE, GVSLineStyle.DASHED, GVSLineThickness.BOLD,
-              GVSColor.YELLOW, GVSIcon.BELL));
-      vertices.add(v2);
-      graph.add(v2);
-      TestDefaultVertex v3 = new TestDefaultVertex("noIcon",
-          new GVSStyle(GVSColor.GREEN, GVSLineStyle.DASHED, GVSLineThickness.BOLD,
-              GVSColor.GREY));
-      vertices.add(v3);
-      graph.add(v3);
+    TestDefaultVertex v = new TestDefaultVertex("anchor",
+        new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED, GVSLineThickness.BOLD,
+            GVSColor.BLUE, GVSIcon.ANCHOR));
+    vertices.add(v);
+    graph.add(v);
+    TestDefaultVertex v2 = new TestDefaultVertex("",
+        new GVSStyle(GVSColor.WHITE, GVSLineStyle.DASHED, GVSLineThickness.BOLD,
+            GVSColor.YELLOW, GVSIcon.BELL));
+    vertices.add(v2);
+    graph.add(v2);
+    TestDefaultVertex v3 = new TestDefaultVertex("noIcon",
+        new GVSStyle(GVSColor.GREEN, GVSLineStyle.DASHED, GVSLineThickness.BOLD,
+            GVSColor.GREY));
+    vertices.add(v3);
+    graph.add(v3);
   }
 }

@@ -40,14 +40,14 @@ public class DefaultGraph {
   }
 
   private static void removeEdge(GVSGraph graph) {
-    GVSDirectedEdge e = directedEdges.remove(directedEdges.size()-1);
+    GVSDirectedEdge e = directedEdges.remove(directedEdges.size() - 1);
     graph.remove(e);
   }
 
   private static void addEdge(GVSGraph graph) {
     int length = vertices.size();
-    TestDirectedEdge e = new TestDirectedEdge(vertices.get(length-1),
-        vertices.get(length-2),"e");
+    TestDirectedEdge e = new TestDirectedEdge(vertices.get(length - 1),
+        vertices.get(length - 2), "e");
     directedEdges.add(e);
     graph.add(e);
   }

@@ -35,7 +35,7 @@ public class SameLabels {
     vertices.add(v7);
     TestBinaryNode v8 = new TestBinaryNode("v1");
     vertices.add(v8);
-    
+
     v1.setLeftChild(v2);
     v1.setRightChild(v3);
     v3.setLeftChild(v4);

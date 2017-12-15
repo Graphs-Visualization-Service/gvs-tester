@@ -27,17 +27,14 @@ public class StyleTester {
         new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED, GVSLineThickness.FAT,
             GVSColor.BLUE, GVSIcon.GLASS));
     vertices.add(v1);
-    TestBinaryNode v2 = new TestBinaryNode("v2",
-        new GVSStyle(GVSColor.WHITE, GVSLineStyle.DOTTED, GVSLineThickness.BOLD,
-            GVSColor.YELLOW));
+    TestBinaryNode v2 = new TestBinaryNode("v2", new GVSStyle(GVSColor.WHITE,
+        GVSLineStyle.DOTTED, GVSLineThickness.BOLD, GVSColor.YELLOW));
     vertices.add(v2);
-    TestBinaryNode v3 = new TestBinaryNode("v3",
-        new GVSStyle(GVSColor.GREEN, GVSLineStyle.THROUGH,
-            GVSLineThickness.SLIGHT, GVSColor.GREY));
+    TestBinaryNode v3 = new TestBinaryNode("v3", new GVSStyle(GVSColor.GREEN,
+        GVSLineStyle.THROUGH, GVSLineThickness.SLIGHT, GVSColor.GREY));
     vertices.add(v3);
-    TestBinaryNode v4 = new TestBinaryNode("v4",
-        new GVSStyle(GVSColor.GREEN, GVSLineStyle.THROUGH,
-            GVSLineThickness.STANDARD, GVSColor.GREY));
+    TestBinaryNode v4 = new TestBinaryNode("v4", new GVSStyle(GVSColor.GREEN,
+        GVSLineStyle.THROUGH, GVSLineThickness.STANDARD, GVSColor.GREY));
     vertices.add(v4);
     TestBinaryNode v5 = new TestBinaryNode("v5",
         new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED, GVSLineThickness.FAT,

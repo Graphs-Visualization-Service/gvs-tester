@@ -14,7 +14,7 @@ public class TestDirectedDFS {
     Vertex vertexC = new Vertex("C", null, 80, 90);
     Vertex vertexD = new Vertex("D", null, 40, 90);
     Vertex vertexE = new Vertex("E", null, 20, 55);
-    
+
     Edge edgeAB = new Edge(null, null, vertexA, vertexB);
     Edge edgeAE = new Edge(null, null, vertexA, vertexE);
     Edge edgeAD = new Edge(null, null, vertexA, vertexD);
@@ -47,21 +47,13 @@ public class TestDirectedDFS {
 
 }
 
-/* Session-Log:
- 
-depthFirstSearch() : A
-Testing            : A->B: DISCOVERY
-depthFirstSearch() : B
-Testing            : B->C: DISCOVERY
-depthFirstSearch() : C
-Testing            : C->A: BACK
-Testing            : B->D: DISCOVERY
-depthFirstSearch() : D
-Testing            : D->C: CROSS
-Testing            : A->D: FORWARD
-Testing            : A->E: DISCOVERY
-depthFirstSearch() : E
-Testing            : E->D: CROSS
-
-*/
-
+/*
+ * Session-Log:
+ * 
+ * depthFirstSearch() : A Testing : A->B: DISCOVERY depthFirstSearch() : B
+ * Testing : B->C: DISCOVERY depthFirstSearch() : C Testing : C->A: BACK Testing
+ * : B->D: DISCOVERY depthFirstSearch() : D Testing : D->C: CROSS Testing :
+ * A->D: FORWARD Testing : A->E: DISCOVERY depthFirstSearch() : E Testing :
+ * E->D: CROSS
+ * 
+ */

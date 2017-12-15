@@ -47,7 +47,8 @@ public class Unicode {
   private static void createVertices(GVSGraph graph) {
     for (int i = 0; i < 5; i++) {
       String code = "1d15";
-      String unicode = String.valueOf(Character.toChars(Integer.parseInt(code, 16)));
+      String unicode = String
+          .valueOf(Character.toChars(Integer.parseInt(code, 16)));
       TestDefaultVertex v = new TestDefaultVertex(unicode + i);
       vertices.add(v);
       graph.add(v);

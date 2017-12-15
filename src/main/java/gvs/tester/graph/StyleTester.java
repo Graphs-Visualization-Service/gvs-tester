@@ -31,7 +31,8 @@ public class StyleTester {
 
   private static void addArrows() {
     Random rnd = new Random();
-    edges.forEach(e -> ((TestUndirectedEdge) e).setArrow(rnd.nextBoolean()? 2: 1));
+    edges.forEach(
+        e -> ((TestUndirectedEdge) e).setArrow(rnd.nextBoolean() ? 2 : 1));
   }
 
   private static void createEdges(GVSGraph graph) {
@@ -46,12 +47,12 @@ public class StyleTester {
     }
     ((TestUndirectedEdge) edges.get(0)).setStyle(
         new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED, GVSLineThickness.BOLD));
-    ((TestUndirectedEdge) edges.get(1)).setStyle(
-        new GVSStyle(GVSColor.BLUE, GVSLineStyle.DOTTED, GVSLineThickness.SLIGHT));
-    ((TestUndirectedEdge) edges.get(2)).setStyle(
-        new GVSStyle(GVSColor.WHITE, GVSLineStyle.THROUGH, GVSLineThickness.FAT));
-    ((TestUndirectedEdge) edges.get(3)).setStyle(
-        new GVSStyle(GVSColor.DARKGREY, GVSLineStyle.THROUGH, GVSLineThickness.STANDARD));
+    ((TestUndirectedEdge) edges.get(1)).setStyle(new GVSStyle(GVSColor.BLUE,
+        GVSLineStyle.DOTTED, GVSLineThickness.SLIGHT));
+    ((TestUndirectedEdge) edges.get(2)).setStyle(new GVSStyle(GVSColor.WHITE,
+        GVSLineStyle.THROUGH, GVSLineThickness.FAT));
+    ((TestUndirectedEdge) edges.get(3)).setStyle(new GVSStyle(GVSColor.DARKGREY,
+        GVSLineStyle.THROUGH, GVSLineThickness.STANDARD));
   }
 
   private static void createVertices(GVSGraph graph) {

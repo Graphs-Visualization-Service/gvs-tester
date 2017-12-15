@@ -35,7 +35,7 @@ public class DefaultTree {
     vertices.add(v7);
     TestDefaultNode v8 = new TestDefaultNode("v8");
     vertices.add(v8);
-    
+
     v1.addChild(v2);
     v1.addChild(v3);
     v1.addChild(v4);
@@ -43,7 +43,7 @@ public class DefaultTree {
     v1.addChild(v6);
     v3.addChild(v7);
     v3.addChild(v8);
-    
+
     tree.add(vertices);
   }
 }

@@ -9,14 +9,15 @@ import gvs.business.styles.GVSStyle;
 import gvs.business.tree.GVSBinaryTreeNode;
 import gvs.business.tree.GVSTreeWithRoot;
 
-class AVLTreeImplGVS<K extends Comparable<? super K>, V> extends
-    AVLTreeImpl<K, V> {
+class AVLTreeImplGVS<K extends Comparable<? super K>, V>
+    extends AVLTreeImpl<K, V> {
 
-  protected GVSTreeWithRoot gvsTree; 
-  
+  protected GVSTreeWithRoot gvsTree;
+
   private final int DELAY = 200;
 
-  protected class AVLNodeGVS extends AVLTreeImpl<K, V>.AVLNode implements GVSBinaryTreeNode {
+  protected class AVLNodeGVS extends AVLTreeImpl<K, V>.AVLNode
+      implements GVSBinaryTreeNode {
 
     protected AVLNodeGVS(Entry<K, V> entry) {
       super(entry);
@@ -32,8 +33,8 @@ class AVLTreeImplGVS<K extends Comparable<? super K>, V> extends
 
     public String getNodeLabel() {
       Entry<K, V> e = getEntry();
-      return e.getKey() + " "+ e.getValue();
-      //return e.getKey().toString();
+      return e.getKey() + " " + e.getValue();
+      // return e.getKey().toString();
     }
 
     @Override
@@ -43,28 +44,29 @@ class AVLTreeImplGVS<K extends Comparable<? super K>, V> extends
 
   } // class BinaryTreeTestGVS.NodeGVS
 
- 
   AVLTreeImplGVS() {
     this("AVLTreeGVS");
   }
-  
+
   AVLTreeImplGVS(String title) {
     gvsTree = new GVSTreeWithRoot(title);
   }
-  
+
   @Override
   protected Node newNode(Entry<K, V> entry) {
     return new AVLNodeGVS(entry);
   }
-  
+
   @Override
   public V put(K key, V value) {
     V result = super.put(key, value);
     gvsTree.setRoot((GVSBinaryTreeNode) root);
     gvsTree.display();
-    try {Thread.sleep(DELAY);} catch (InterruptedException e) {} 
+    try {
+      Thread.sleep(DELAY);
+    } catch (InterruptedException e) {
+    }
     return result;
   }
 
 }
- 

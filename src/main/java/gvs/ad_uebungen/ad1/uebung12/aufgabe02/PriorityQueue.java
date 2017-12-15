@@ -5,20 +5,18 @@
 
 package gvs.ad_uebungen.ad1.uebung12.aufgabe02;
 
-
 /**
  * A heap-based (array-implementation) Priority-Queue with fixed length.
  */
 public class PriorityQueue<K extends Comparable<? super K>, V> {
-  
-  
+
   protected PQEntry<K, V>[] heapArray;
 
   /** Points to the last element in the heap. */
   protected int last = 0;
-  
-  public static class PQEntry<K extends Comparable<? super K>, V> implements
-      Entry<K, V>, Comparable<PQEntry<K, V>> {
+
+  public static class PQEntry<K extends Comparable<? super K>, V>
+      implements Entry<K, V>, Comparable<PQEntry<K, V>> {
 
     protected K key;
     protected V value;
@@ -42,14 +40,13 @@ public class PriorityQueue<K extends Comparable<? super K>, V> {
     public int compareTo(PQEntry<K, V> other) {
       return this.key.compareTo(other.key);
     }
-    
+
     @Override
     public String toString() {
-      return "("+key+","+value+")";
+      return "(" + key + "," + value + ")";
     }
 
   }
-
 
   @SuppressWarnings("unchecked")
   public PriorityQueue(int maxSize) {
@@ -57,7 +54,7 @@ public class PriorityQueue<K extends Comparable<? super K>, V> {
   }
 
   public Entry<K, V> insert(K key, V value) throws FullPriorityQueueException {
-    if (last == heapArray.length-1) {
+    if (last == heapArray.length - 1) {
       throw new FullPriorityQueueException();
     }
     last++;
@@ -66,11 +63,11 @@ public class PriorityQueue<K extends Comparable<? super K>, V> {
     upheap(last);
     return e;
   }
-  
+
   public Entry<K, V> min() {
     if (last == 0) {
       return null;
-    } else 
+    } else
       return heapArray[1];
   }
 
@@ -87,23 +84,26 @@ public class PriorityQueue<K extends Comparable<? super K>, V> {
   }
 
   protected void upheap(int actualIndex) {
-    if (actualIndex == 1) { 
-      return;  // no further upheap-swaps possible
+    if (actualIndex == 1) {
+      return; // no further upheap-swaps possible
     }
     int parent = actualIndex / 2;
     if (heapArray[parent].compareTo(heapArray[actualIndex]) > 0) {
       swap(parent, actualIndex);
       upheap(parent);
     }
-  } 
+  }
 
   protected void downheap(int actualIndex) {
     int leftChildIndex = actualIndex * 2;
     int rightChildIndex = leftChildIndex + 1;
-    boolean leftChildIsSmaller  = checkForPotentialSwap(actualIndex, leftChildIndex);
-    boolean rightChildIsSmaller = checkForPotentialSwap(actualIndex, rightChildIndex);
+    boolean leftChildIsSmaller = checkForPotentialSwap(actualIndex,
+        leftChildIndex);
+    boolean rightChildIsSmaller = checkForPotentialSwap(actualIndex,
+        rightChildIndex);
     if (leftChildIsSmaller && rightChildIsSmaller) {
-      if (heapArray[leftChildIndex].compareTo(heapArray[rightChildIndex]) <= 0) {
+      if (heapArray[leftChildIndex]
+          .compareTo(heapArray[rightChildIndex]) <= 0) {
         swapAndDownheap(actualIndex, leftChildIndex);
       } else {
         swapAndDownheap(actualIndex, rightChildIndex);
@@ -114,27 +114,30 @@ public class PriorityQueue<K extends Comparable<? super K>, V> {
       swapAndDownheap(actualIndex, rightChildIndex);
     }
   }
-  
+
   protected boolean checkForPotentialSwap(int parent, int child) {
     return (child <= last) && (heapArray[child] != null)
-            && (heapArray[parent].compareTo(heapArray[child]) > 0);
+        && (heapArray[parent].compareTo(heapArray[child]) > 0);
   }
-  
+
   protected void swapAndDownheap(int parent, int child) {
     swap(parent, child);
     downheap(child);
   }
-  
+
   protected void swap(int parent, int child) {
-      PQEntry<K, V> tmp = heapArray[parent];
-      heapArray[parent] = heapArray[child];
-      heapArray[child] = tmp;
+    PQEntry<K, V> tmp = heapArray[parent];
+    heapArray[parent] = heapArray[child];
+    heapArray[child] = tmp;
   }
-  
+
   /**
    * Factory-Method for new entries.
-   * @param key The key of the new entry.
-   * @param value The value of the new entry.
+   * 
+   * @param key
+   *          The key of the new entry.
+   * @param value
+   *          The value of the new entry.
    * @return The new created Entry.
    */
   protected PQEntry<K, V> newEntry(K key, V value) {
@@ -144,11 +147,11 @@ public class PriorityQueue<K extends Comparable<? super K>, V> {
   public boolean isEmpty() {
     return size() == 0;
   }
-  
+
   public int size() {
     return last;
   }
-  
+
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -160,7 +163,7 @@ public class PriorityQueue<K extends Comparable<? super K>, V> {
       } else {
         sb.append("null");
       }
-      if (i < heapArray.length-1) {
+      if (i < heapArray.length - 1) {
         sb.append(", ");
       }
     }
@@ -171,13 +174,11 @@ public class PriorityQueue<K extends Comparable<? super K>, V> {
   public void print() {
     System.out.println(toString());
   }
-  
+
   /**
    * If GVS is in use: The actual state will be shown on GVS.
    */
   public void displayOnGVS() {
   }
 
-} 
-
- 
+}

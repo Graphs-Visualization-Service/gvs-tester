@@ -24,7 +24,7 @@ import gvs.business.styles.GVSStyle;
 import gvs.business.tree.GVSTreeWithCollection;
 
 public class Graph {
-  
+
   // Simply edge-list-structure.
   // Performance is irrelevant, so we would allow e.g. removeEdge(e) in O(m).
   private List<Vertex> vertices;
@@ -32,63 +32,45 @@ public class Graph {
 
   enum VertexState {
 
-    UNEXPLORED(
-        GVSColor.STANDARD,
-        GVSLineStyle.THROUGH,
-        GVSLineThickness.STANDARD,
-        GVSColor.STANDARD), 
-    VISITED(
-        GVSColor.RED, 
-        GVSLineStyle.THROUGH,
-        GVSLineThickness.STANDARD,
-        GVSColor.STANDARD);
+    UNEXPLORED(GVSColor.STANDARD, GVSLineStyle.THROUGH,
+        GVSLineThickness.STANDARD, GVSColor.STANDARD), VISITED(GVSColor.RED,
+            GVSLineStyle.THROUGH, GVSLineThickness.STANDARD, GVSColor.STANDARD);
 
     private GVSStyle style;
 
-    VertexState(GVSColor lineColor, GVSLineStyle lineStyle, GVSLineThickness thickness,
-        GVSColor fillColor) {
+    VertexState(GVSColor lineColor, GVSLineStyle lineStyle,
+        GVSLineThickness thickness, GVSColor fillColor) {
       style = new GVSStyle(lineColor, lineStyle, thickness, fillColor);
     }
 
     public GVSStyle getGVSStyle() {
       return style;
     }
-    
+
   }
 
   enum EdgeState {
-    
-    UNEXPLORED(
-        GVSColor.STANDARD, 
-        GVSLineStyle.THROUGH, 
-        GVSLineThickness.STANDARD),
-    DISCOVERY(
-        GVSColor.RED, 
-        GVSLineStyle.THROUGH, 
-        GVSLineThickness.STANDARD),
-    BACK(
-        GVSColor.GREEN, 
-        GVSLineStyle.DASHED, 
-        GVSLineThickness.STANDARD),
-    FORWARD(
-        GVSColor.GREEN, 
-        GVSLineStyle.DOTTED, 
-        GVSLineThickness.STANDARD),
-    CROSS(
-        GVSColor.BLUE, 
-        GVSLineStyle.DOTTED, 
-        GVSLineThickness.STANDARD);
-    
+
+    UNEXPLORED(GVSColor.STANDARD, GVSLineStyle.THROUGH,
+        GVSLineThickness.STANDARD), DISCOVERY(GVSColor.RED,
+            GVSLineStyle.THROUGH,
+            GVSLineThickness.STANDARD), BACK(GVSColor.GREEN,
+                GVSLineStyle.DASHED, GVSLineThickness.STANDARD), FORWARD(
+                    GVSColor.GREEN, GVSLineStyle.DOTTED,
+                    GVSLineThickness.STANDARD), CROSS(GVSColor.BLUE,
+                        GVSLineStyle.DOTTED, GVSLineThickness.STANDARD);
+
     private GVSStyle style;
-    
-    EdgeState(GVSColor lineColor, GVSLineStyle lineStyle, GVSLineThickness thickness) {
+
+    EdgeState(GVSColor lineColor, GVSLineStyle lineStyle,
+        GVSLineThickness thickness) {
       style = new GVSStyle(lineColor, lineStyle, thickness);
     }
-    
+
     public GVSStyle getGVSEdgeTyp() {
       return style;
     }
- 
+
   }
 
   // The maps for the labeling:
@@ -123,11 +105,10 @@ public class Graph {
       gvsGraph.add(edge);
     }
   }
-  
+
   public List<Edge> outgoingEdges(Vertex v) {
-    List<Edge> outgoingEdges = edges.stream() 
-      .filter(e -> e.getStartVertex() == v) 
-      .collect(Collectors.toList());
+    List<Edge> outgoingEdges = edges.stream()
+        .filter(e -> e.getStartVertex() == v).collect(Collectors.toList());
     return outgoingEdges;
   }
 
@@ -145,7 +126,8 @@ public class Graph {
   }
 
   private void initGVS(String graphTitle) {
-    GVSTreeWithCollection dummyTree = new GVSTreeWithCollection("");;
+    GVSTreeWithCollection dummyTree = new GVSTreeWithCollection("");
+    ;
     if ((System.getProperty("NoGVS") == null) && (!dummyTree.isConnected())) {
       String[] text = { "Connection to GVS-Server failed!\n",
           "Start \"GVS_Server_v1.5.jar\" first.",
@@ -174,13 +156,13 @@ public class Graph {
   }
 
   public void directedDFS() {
-    for (Vertex v: vertices) {
+    for (Vertex v : vertices) {
       vertexLabeling.put(v, VertexState.UNEXPLORED);
     }
-    for (Edge e: edges) {
+    for (Edge e : edges) {
       edgeLabeling.put(e, EdgeState.UNEXPLORED);
     }
-    for (Vertex v: vertices) {
+    for (Vertex v : vertices) {
       if (vertexLabeling.get(v) == VertexState.UNEXPLORED) {
         directedDFS(v);
       }
@@ -192,12 +174,12 @@ public class Graph {
     vertexLabeling.put(v, VertexState.VISITED);
     v.setGVSStyle(VertexState.VISITED.getGVSStyle());
     displayOnGVS();
-    for (Vertex vertex: actualPath) {
+    for (Vertex vertex : actualPath) {
       subtreeNodes.get(vertex).add(v);
     }
     subtreeNodes.put(v, new LinkedList<Vertex>());
     actualPath.push(v);
-    for (Edge e: outgoingEdges(v)) {
+    for (Edge e : outgoingEdges(v)) {
       System.out.format("%-" + INDENT + "s: %s: ", "Testing", e);
       if (edgeLabeling.get(e) == EdgeState.UNEXPLORED) {
         Vertex w = opposite(v, e);

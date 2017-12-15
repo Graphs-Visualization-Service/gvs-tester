@@ -11,7 +11,7 @@ import java.util.List;
 import gvs.business.styles.GVSStyle;
 import gvs.business.tree.GVSDefaultTreeNode;
 
-class TrieNode<V> implements GVSDefaultTreeNode{
+class TrieNode<V> implements GVSDefaultTreeNode {
 
   private String keySubstr;
   private LinkedList<V> values;
@@ -30,7 +30,7 @@ class TrieNode<V> implements GVSDefaultTreeNode{
   public void setKeySubstr(String keySubstr) {
     this.keySubstr = keySubstr;
   }
-  
+
   public List<TrieNode<V>> getChildren() {
     return children;
   }
@@ -59,6 +59,3 @@ class TrieNode<V> implements GVSDefaultTreeNode{
   }
 
 }
- 
- 
- 

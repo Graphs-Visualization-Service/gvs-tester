@@ -50,20 +50,20 @@ public class IconGraphRelative {
   }
 
   private static void createVertices(GVSGraph graph) {
-      TestRelativeVertex v = new TestRelativeVertex(10,30,"anchor",
-          new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED, GVSLineThickness.BOLD,
-              GVSColor.BLUE, GVSIcon.ANCHOR));
-      vertices.add(v);
-      graph.add(v);
-      TestRelativeVertex v2 = new TestRelativeVertex(90,10,"",
-          new GVSStyle(GVSColor.WHITE, GVSLineStyle.DASHED, GVSLineThickness.BOLD,
-              GVSColor.YELLOW, GVSIcon.BELL));
-      vertices.add(v2);
-      graph.add(v2);
-      TestRelativeVertex v3 = new TestRelativeVertex(70,20,"noIcon",
-          new GVSStyle(GVSColor.GREEN, GVSLineStyle.DASHED, GVSLineThickness.BOLD,
-              GVSColor.GREY));
-      vertices.add(v3);
-      graph.add(v3);
+    TestRelativeVertex v = new TestRelativeVertex(10, 30, "anchor",
+        new GVSStyle(GVSColor.RED, GVSLineStyle.DASHED, GVSLineThickness.BOLD,
+            GVSColor.BLUE, GVSIcon.ANCHOR));
+    vertices.add(v);
+    graph.add(v);
+    TestRelativeVertex v2 = new TestRelativeVertex(90, 10, "",
+        new GVSStyle(GVSColor.WHITE, GVSLineStyle.DASHED, GVSLineThickness.BOLD,
+            GVSColor.YELLOW, GVSIcon.BELL));
+    vertices.add(v2);
+    graph.add(v2);
+    TestRelativeVertex v3 = new TestRelativeVertex(70, 20, "noIcon",
+        new GVSStyle(GVSColor.GREEN, GVSLineStyle.DASHED, GVSLineThickness.BOLD,
+            GVSColor.GREY));
+    vertices.add(v3);
+    graph.add(v3);
   }
 }

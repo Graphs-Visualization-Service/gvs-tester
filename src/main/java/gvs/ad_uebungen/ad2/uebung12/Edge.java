@@ -46,7 +46,7 @@ public class Edge implements Comparable<Edge>, GVSDirectedEdge {
   public GVSStyle getStyle() {
     return style;
   }
-  
+
   public GVSStyle setGVSEdgeTyp(GVSStyle style) {
     GVSStyle old = style;
     this.style = style;

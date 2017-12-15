@@ -9,12 +9,13 @@ import gvs.business.styles.GVSStyle;
 import gvs.business.tree.GVSBinaryTreeNode;
 import gvs.business.tree.GVSTreeWithRoot;
 
-public class BinarySearchTreeGVS<K extends Comparable<? super K>, V> extends
-    BinarySearchTree<K, V> {
+public class BinarySearchTreeGVS<K extends Comparable<? super K>, V>
+    extends BinarySearchTree<K, V> {
 
   protected GVSTreeWithRoot gvsTree = new GVSTreeWithRoot("BinaryTreeTestGVS");
 
-  protected class NodeGVS extends BinarySearchTree<K, V>.Node implements GVSBinaryTreeNode {
+  protected class NodeGVS extends BinarySearchTree<K, V>.Node
+      implements GVSBinaryTreeNode {
 
     protected NodeGVS(Entry<K, V> entry) {
       super(entry);
@@ -62,4 +63,3 @@ public class BinarySearchTreeGVS<K extends Comparable<? super K>, V> extends
   }
 
 }
- 

@@ -12,11 +12,11 @@ import gvs.ad_uebungen.ad1.uebung12.aufgabe02.PriorityQueue;
  * A heap-based (array-implementation) Adaptable-Priority-Queue (APQ) with fixed
  * length.
  */
-public class AdaptablePriorityQueue<K extends Comparable<? super K>, V> extends
-    PriorityQueue<K, V> {
+public class AdaptablePriorityQueue<K extends Comparable<? super K>, V>
+    extends PriorityQueue<K, V> {
 
-  public static class APQEntry<K extends Comparable<? super K>, V> extends
-      PriorityQueue.PQEntry<K, V> {
+  public static class APQEntry<K extends Comparable<? super K>, V>
+      extends PriorityQueue.PQEntry<K, V> {
 
     protected int index;
 
@@ -38,9 +38,10 @@ public class AdaptablePriorityQueue<K extends Comparable<? super K>, V> extends
   AdaptablePriorityQueue(int maxSize) {
     super(maxSize);
   }
-  
+
   /**
    * Replaces the key in the given entry and ensures the inner-order afterwards.
+   * 
    * @param entry
    *          The entry where to replace the key.
    * @param newKey
@@ -50,7 +51,8 @@ public class AdaptablePriorityQueue<K extends Comparable<? super K>, V> extends
    *           In case of an entry which does not belong the the APQ or for
    *           null.
    */
-  public K replaceKey(Entry<K, V> entry, K newKey) throws InvalidEntryException {
+  public K replaceKey(Entry<K, V> entry, K newKey)
+      throws InvalidEntryException {
     APQEntry<K, V> apqEntry = verifyEntry(entry);
     K oldKey = apqEntry.getKey();
     apqEntry.setKey(newKey);
@@ -65,7 +67,7 @@ public class AdaptablePriorityQueue<K extends Comparable<? super K>, V> extends
     apqEntry.setValue(newValue);
     return oldValue;
   }
-  
+
   @Override
   public Entry<K, V> removeMin() {
     APQEntry<K, V> resultApqEntry = (APQEntry<K, V>) super.removeMin();
@@ -80,6 +82,7 @@ public class AdaptablePriorityQueue<K extends Comparable<? super K>, V> extends
 
   /**
    * Removes the given entry from this APQ.
+   * 
    * @param entry
    *          The entry to remove.
    * @return The removed entry.
@@ -98,7 +101,7 @@ public class AdaptablePriorityQueue<K extends Comparable<? super K>, V> extends
     apqEntry.index = -1;
     return apqEntry;
   }
-  
+
   private APQEntry<K, V> verifyEntry(Entry<K, V> entry)
       throws InvalidEntryException {
     if (!(entry instanceof APQEntry)) {
@@ -130,18 +133,21 @@ public class AdaptablePriorityQueue<K extends Comparable<? super K>, V> extends
     ((APQEntry<K, V>) heapArray[parent]).index = parent;
     ((APQEntry<K, V>) heapArray[child]).index = child;
   }
-  
+
   /**
    * Factory-Method for new entries.
-   * @param key The key of the new entry.
-   * @param value The value of the new entry.
+   * 
+   * @param key
+   *          The key of the new entry.
+   * @param value
+   *          The value of the new entry.
    * @return The new created Entry.
    */
   @Override
   protected PQEntry<K, V> newEntry(K key, V value) {
     return new APQEntry<K, V>(key, value, last);
   }
-  
+
   /**
    * If GVS is in use: The actual state will be shown on GVS.
    */

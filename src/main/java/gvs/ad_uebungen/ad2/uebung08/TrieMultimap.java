@@ -24,7 +24,7 @@ public class TrieMultimap<V> implements Multimap<String, V> {
     this.tree = new GVSTreeWithRoot("Trie");
     this.tree.setRoot(this.root);
   }
-  
+
   /**
    * Returns the first value for a given key. null if key is not found.
    */
@@ -76,8 +76,8 @@ public class TrieMultimap<V> implements Multimap<String, V> {
     tree.display();
   }
 
-  private boolean mutate(Mutation operation, TrieNode<V> node, String key, 
-                         int keyIndex, V value) {
+  private boolean mutate(Mutation operation, TrieNode<V> node, String key,
+      int keyIndex, V value) {
     if (key.length() == keyIndex) {
       // found the node!
       if (operation == Mutation.INSERT) {
@@ -122,11 +122,12 @@ public class TrieMultimap<V> implements Multimap<String, V> {
   }
 
   private void compress(TrieNode<V> node, TrieNode<V> child) {
-    if ((child != root) && (child.getChildren().size() == 1) 
+    if ((child != root) && (child.getChildren().size() == 1)
         && (child.getValues().isEmpty())) {
       // compress:
       TrieNode<V> childOfChild = child.getChildren().get(0);
-      child.setKeySubstr(child.getKeySubstr().concat(childOfChild.getKeySubstr()));
+      child.setKeySubstr(
+          child.getKeySubstr().concat(childOfChild.getKeySubstr()));
       child.getValues().addAll(childOfChild.getValues());
       child.getChildren().addAll(childOfChild.getChildren());
       child.getChildren().remove(childOfChild);
@@ -201,7 +202,7 @@ public class TrieMultimap<V> implements Multimap<String, V> {
       print(depth + 1, element);
     }
   }
-  
+
   public GVSTreeWithRoot getTree() {
     return tree;
   }
@@ -272,52 +273,19 @@ public class TrieMultimap<V> implements Multimap<String, V> {
     multimap.getTree().disconnect();
   }
 }
- 
-/* Session-Log:
 
-after insertion
-: 
-        Büro: bureau, office, agency
-        H: 
-                eld: hero
-                all: hall
-                        o: hello
-                        e: hall
-        ha: 
-                lten: keep
-                st: have
-        E: 
-                kstase: ecstasy
-                cke: corner
-                        n: corners
-
-find test:
-bureau
-hello
-hero
-keep
-hall
-hall
-have
-ecstasy
-corner
-corners
-null
-
-findall test:
-bureau office agency 
-false
-
-after remove
-: 
-        Büro: bureau, office, agency
-        H: 
-                eld: hero
-                all: hall
-                        e: hall
-        E: 
-                kstase: ecstasy
-                cken: corners
-
-*/ 
- 
+/*
+ * Session-Log:
+ * 
+ * after insertion : Büro: bureau, office, agency H: eld: hero all: hall o:
+ * hello e: hall ha: lten: keep st: have E: kstase: ecstasy cke: corner n:
+ * corners
+ * 
+ * find test: bureau hello hero keep hall hall have ecstasy corner corners null
+ * 
+ * findall test: bureau office agency false
+ * 
+ * after remove : Büro: bureau, office, agency H: eld: hero all: hall e: hall E:
+ * kstase: ecstasy cken: corners
+ * 
+ */

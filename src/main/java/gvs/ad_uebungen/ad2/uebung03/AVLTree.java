@@ -9,39 +9,38 @@ import java.util.Collection;
 
 import gvs.ad_uebungen.ad2.uebung03.BinarySearchTree.Entry;
 
+public class AVLTree<K extends Comparable<? super K>, V> {
 
-public class AVLTree <K extends Comparable<? super K>, V> {
-  
   private AVLTreeImpl<K, V> avlTreeImpl = new AVLTreeImplGVS<K, V>();
-  
+
   public V put(K key, V value) {
     return avlTreeImpl.put(key, value);
   }
-  
+
   public V get(K key) {
     return avlTreeImpl.get(key);
   }
-  
+
   public int getHeight() {
     return avlTreeImpl.getHeight();
   }
-  
+
   public int size() {
     return avlTreeImpl.size();
   }
-  
+
   public boolean isEmpty() {
     return avlTreeImpl.isEmpty();
   }
-  
+
   public void clear() {
     avlTreeImpl.clear();
   }
-  
+
   public Collection<Entry<K, V>> inorder() {
     return avlTreeImpl.inorder();
   }
-  
+
   public void printInorder() {
     avlTreeImpl.printInorder();
   }
@@ -49,7 +48,7 @@ public class AVLTree <K extends Comparable<? super K>, V> {
   public void print() {
     avlTreeImpl.print();
   }
-  
+
   protected AVLTreeImpl<K, V> getImpl() {
     return avlTreeImpl;
   }
@@ -89,61 +88,35 @@ public class AVLTree <K extends Comparable<? super K>, V> {
     System.out.println("Getting 3 :" + avlTree.get(3));
     System.out.println("Getting 4 :" + avlTree.get(4));
     System.out.println("Getting 7 :" + avlTree.get(7));
-    
+
     if (avlTree.getImpl() instanceof AVLTreeImplGVS) {
-      ((AVLTreeImplGVS<Integer, String>)avlTree.getImpl()).gvsTree.disconnect();
+      ((AVLTreeImplGVS<Integer, String>) avlTree.getImpl()).gvsTree
+          .disconnect();
     }
 
   }
 
 }
 
-
-/* Session-Log:
-
-Inserting 2:
- 2 - Str2   : h=0 ROOT  
-================================
-Inserting 1:
- 1 - Str1   : h=0 / parent(key)=2  
- 2 - Str2   : h=1 ROOT  
-================================
-Inserting 5:
- 1 - Str1   : h=0 / parent(key)=2  
- 2 - Str2   : h=1 ROOT  
- 5 - Str5   : h=0 \ parent(key)=2  
-================================
-Inserting 3:
- 1 - Str1   : h=0 / parent(key)=2  
- 2 - Str2   : h=2 ROOT  
- 3 - Str3   : h=0 / parent(key)=5  
- 5 - Str5   : h=1 \ parent(key)=2  
-================================
-Inserting 6:
- 1 - Str1   : h=0 / parent(key)=2  
- 2 - Str2   : h=2 ROOT  
- 3 - Str3   : h=0 / parent(key)=5  
- 5 - Str5   : h=1 \ parent(key)=2  
- 6 - Str6   : h=0 \ parent(key)=5  
-================================
-Inserting 4:1:
- 1 - Str1   : h=0 / parent(key)=2  
- 2 - Str2   : h=3 ROOT  
- 3 - Str3   : h=1 / parent(key)=5  
- 4 - Str4:1 : h=0 \ parent(key)=3  
- 5 - Str5   : h=2 \ parent(key)=2  
- 6 - Str6   : h=0 \ parent(key)=5  
-================================
-Inserting 4:2:
- 1 - Str1   : h=0 / parent(key)=2  
- 2 - Str2   : h=3 ROOT  
- 3 - Str3   : h=1 / parent(key)=5  
- 4 - Str4:2 : h=0 \ parent(key)=3  
- 5 - Str5   : h=2 \ parent(key)=2  
- 6 - Str6   : h=0 \ parent(key)=5  
-================================
-Getting 3 :Str3
-Getting 4 :Str4:2
-Getting 7 :null
-
-*/ 
+/*
+ * Session-Log:
+ * 
+ * Inserting 2: 2 - Str2 : h=0 ROOT ================================ Inserting
+ * 1: 1 - Str1 : h=0 / parent(key)=2 2 - Str2 : h=1 ROOT
+ * ================================ Inserting 5: 1 - Str1 : h=0 / parent(key)=2
+ * 2 - Str2 : h=1 ROOT 5 - Str5 : h=0 \ parent(key)=2
+ * ================================ Inserting 3: 1 - Str1 : h=0 / parent(key)=2
+ * 2 - Str2 : h=2 ROOT 3 - Str3 : h=0 / parent(key)=5 5 - Str5 : h=1 \
+ * parent(key)=2 ================================ Inserting 6: 1 - Str1 : h=0 /
+ * parent(key)=2 2 - Str2 : h=2 ROOT 3 - Str3 : h=0 / parent(key)=5 5 - Str5 :
+ * h=1 \ parent(key)=2 6 - Str6 : h=0 \ parent(key)=5
+ * ================================ Inserting 4:1: 1 - Str1 : h=0 /
+ * parent(key)=2 2 - Str2 : h=3 ROOT 3 - Str3 : h=1 / parent(key)=5 4 - Str4:1 :
+ * h=0 \ parent(key)=3 5 - Str5 : h=2 \ parent(key)=2 6 - Str6 : h=0 \
+ * parent(key)=5 ================================ Inserting 4:2: 1 - Str1 : h=0
+ * / parent(key)=2 2 - Str2 : h=3 ROOT 3 - Str3 : h=1 / parent(key)=5 4 - Str4:2
+ * : h=0 \ parent(key)=3 5 - Str5 : h=2 \ parent(key)=2 6 - Str6 : h=0 \
+ * parent(key)=5 ================================ Getting 3 :Str3 Getting 4
+ * :Str4:2 Getting 7 :null
+ * 
+ */

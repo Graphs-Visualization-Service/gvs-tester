@@ -1,13 +1,13 @@
 package gvs.tester.graph;
 
 import gvs.business.graph.GVSGraph;
-import gvs.model.graph.TestDefaultVertex;
-import gvs.model.graph.TestDirectedEdge;
 import gvs.business.styles.GVSColor;
 import gvs.business.styles.GVSIcon;
 import gvs.business.styles.GVSLineStyle;
 import gvs.business.styles.GVSLineThickness;
 import gvs.business.styles.GVSStyle;
+import gvs.model.graph.TestDefaultVertex;
+import gvs.model.graph.TestDirectedEdge;
 
 public class HelloGraph {
 
@@ -36,7 +36,7 @@ public class HelloGraph {
         GVSLineThickness.STANDARD, GVSColor.STANDARD, GVSIcon.BICYCLE);
     v1.setStyle(iconStyle);
     graph.display();
-    
+
     graph.disconnect();
   }
 }

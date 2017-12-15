@@ -15,15 +15,15 @@ public interface Multimap<K, V> {
   void insert(K key, V value);
 
   /**
-   * Returns the first value for a given key.
-   * If key is not found: null
+   * Returns the first value for a given key. If key is not found: null
    */
   V find(K key);
 
   /**
    * Returns all values for a given key.
-   * @return Iterator over all values.
-   *         If key is not found: Iterator without next.
+   * 
+   * @return Iterator over all values. If key is not found: Iterator without
+   *         next.
    */
   Iterator<V> findAll(K key);
 
@@ -38,6 +38,3 @@ public interface Multimap<K, V> {
   int size();
 
 }
- 
- 
- 

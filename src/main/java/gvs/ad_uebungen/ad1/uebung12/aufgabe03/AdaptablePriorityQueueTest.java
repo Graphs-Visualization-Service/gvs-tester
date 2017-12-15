@@ -10,12 +10,12 @@ import gvs.ad_uebungen.ad1.uebung12.aufgabe02.FullPriorityQueueException;
 
 public class AdaptablePriorityQueueTest {
 
-  public static void main(String[] args) throws FullPriorityQueueException,
-      InvalidEntryException {
+  public static void main(String[] args)
+      throws FullPriorityQueueException, InvalidEntryException {
 
-    AdaptablePriorityQueue<Integer, String> apq = 
-        new AdaptablePriorityQueueGVS<>(5);
-    
+    AdaptablePriorityQueue<Integer, String> apq = new AdaptablePriorityQueueGVS<>(
+        5);
+
     System.out.println("\ninsert()'s:");
     Entry<Integer, String> e4 = apq.insert(4, "D");
     apq.print();
@@ -36,29 +36,24 @@ public class AdaptablePriorityQueueTest {
     apq.print();
     apq.replaceKey(e32, 1);
     apq.print();
-    
+
     if (apq instanceof AdaptablePriorityQueueGVS) {
-      ((AdaptablePriorityQueueGVS<Integer, String>)apq).gvsTree.disconnect();
+      ((AdaptablePriorityQueueGVS<Integer, String>) apq).gvsTree.disconnect();
     }
 
   }
 
 }
 
-
-/* Session-Log:
-
-insert()'s:
-[null, (4,D), null, null, null, null]
-[null, (3,C-1), (4,D), null, null, null]
-[null, (3,C-1), (4,D), (3,C-2), null, null]
-[null, (2,B), (3,C-1), (3,C-2), (4,D), null]
-[null, (1,A), (2,B), (3,C-2), (4,D), (3,C-1)]
-
-replaceKey()'s:
-[null, (1,A), (1,C-1), (3,C-2), (4,D), (2,B)]
-[null, (1,C-1), (2,B), (3,C-2), (4,D), (3,A)]
-[null, (1,C-1), (1,D), (3,C-2), (2,B), (3,A)]
-[null, (1,C-1), (1,D), (1,C-2), (2,B), (3,A)]
-
-*/
+/*
+ * Session-Log:
+ * 
+ * insert()'s: [null, (4,D), null, null, null, null] [null, (3,C-1), (4,D),
+ * null, null, null] [null, (3,C-1), (4,D), (3,C-2), null, null] [null, (2,B),
+ * (3,C-1), (3,C-2), (4,D), null] [null, (1,A), (2,B), (3,C-2), (4,D), (3,C-1)]
+ * 
+ * replaceKey()'s: [null, (1,A), (1,C-1), (3,C-2), (4,D), (2,B)] [null, (1,C-1),
+ * (2,B), (3,C-2), (4,D), (3,A)] [null, (1,C-1), (1,D), (3,C-2), (2,B), (3,A)]
+ * [null, (1,C-1), (1,D), (1,C-2), (2,B), (3,A)]
+ * 
+ */

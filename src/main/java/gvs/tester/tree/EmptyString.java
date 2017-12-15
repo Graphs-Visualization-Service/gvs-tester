@@ -25,7 +25,7 @@ public class EmptyString {
     vertices.add(v2);
     TestBinaryNode v3 = new TestBinaryNode("v3");
     vertices.add(v3);
-    
+
     v1.setLeftChild(v2);
     v1.setRightChild(v3);
     tree.add(vertices);
